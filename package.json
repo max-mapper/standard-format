@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "attempts to reformat javascript to comply with feross/standard style",
   "main": "index.js",
+  "bin": "./bin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/maxogden/standard-format/issues"
   },
-  "homepage": "https://github.com/maxogden/standard-format"
+  "homepage": "https://github.com/maxogden/standard-format",
+  "dependencies": {
+    "find-root": "^0.1.1",
+    "glob": "^4.3.5",
+    "minimatch": "^2.0.1"
+  }
 }
