@@ -1,0 +1,19 @@
+{
+  "name": "standard-format",
+  "version": "1.0.0",
+  "description": "attempts to reformat javascript to comply with feross/standard style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxogden/standard-format.git"
+  },
+  "author": "max ogden",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/maxogden/standard-format/issues"
+  },
+  "homepage": "https://github.com/maxogden/standard-format"
+}
