@@ -12,28 +12,24 @@ var DEFAULT_IGNORE = [
   '**/bundle.js'
 ]
 
-module.exports.transform = function (files) {
-  var NAMED_FUNCTION_NOSPACE = /function(\s+)?(\w+)(\s+)?\(/ig
-  var ANON_FUNCTION_NOSPACE = /function(\s+)?\(/ig
-  var NAMED_FUNCTION_SPACE = 'function $2 ('
-  var ANON_FUNCTION_SPACE = 'function ('
-  var FUNCTION_DECLARATION = /function\s(\w+)\s\((.+)?\)(\s+)?\{/ig
-  var ANON_FUNCTION_DECLARATION = /function\s\((.+)?\)(\s+)?\{/ig
-  var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
-  var CLEAN_ANON_FUNCTION_DECLARATION = 'function ($1) {'
-  var MULTI_NEWLINE = /(\r?\n)(\r?\n)/g
-  var EOL = os.EOL
-  
-  files = files.map(function(f) {
-    return f
-      .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
-      .replace(ANON_FUNCTION_NOSPACE, ANON_FUNCTION_SPACE)
-      .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
-      .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
-      .replace(MULTI_NEWLINE, EOL)
-  })
+var NAMED_FUNCTION_NOSPACE = /function(\s+)?(\w+)(\s+)?\(/ig
+var ANON_FUNCTION_NOSPACE = /function(\s+)?\(/ig
+var NAMED_FUNCTION_SPACE = 'function $2 ('
+var ANON_FUNCTION_SPACE = 'function ('
+var FUNCTION_DECLARATION = /function\s(\w+)\s\((.+)?\)(\s+)?\{/ig
+var ANON_FUNCTION_DECLARATION = /function\s\((.+)?\)(\s+)?\{/ig
+var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
+var CLEAN_ANON_FUNCTION_DECLARATION = 'function ($1) {'
+var MULTI_NEWLINE = /(\r?\n)(\r?\n)/g
+var EOL = os.EOL
 
-  return files
+module.exports.transform = function (file) {
+  return file
+    .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
+    .replace(ANON_FUNCTION_NOSPACE, ANON_FUNCTION_SPACE)
+    .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
+    .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
+    .replace(MULTI_NEWLINE, EOL)
 }
 
 module.exports.load = function (opts, cb) {
@@ -70,7 +66,7 @@ module.exports.load = function (opts, cb) {
         return mm.match(file)
       })
     }).map(function (f) {
-      return fs.readFileSync(f).toString() // assume utf8
+      return { name: f, data: fs.readFileSync(f).toString() } // assume utf8
     })
     cb(null, files)
   })
