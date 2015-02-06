@@ -20,6 +20,8 @@
   "dependencies": {
     "find-root": "^0.1.1",
     "glob": "^4.3.5",
-    "minimatch": "^2.0.1"
+    "minimatch": "^2.0.1",
+    "minimist": "^1.1.0",
+    "stdin": "0.0.1"
   }
 }
