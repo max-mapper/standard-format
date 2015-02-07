@@ -31,7 +31,7 @@ module.exports.transform = function (file) {
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
     .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
     .replace(MULTI_NEWLINE, EOL)
-    .replace(EOL_SEMICOLON, '')
+    .replace(EOL_SEMICOLON, EOL)
 }
 
 module.exports.load = function (opts, cb) {
