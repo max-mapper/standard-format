@@ -25,3 +25,6 @@ function foo()  {}
 function(){}
 function foo (){}
 function foo ()  {}
+
+console.log('hello, world!');
+

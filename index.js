@@ -21,6 +21,7 @@ var ANON_FUNCTION_DECLARATION = /function\s\((.+)?\)(\s+)?\{/ig
 var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
 var CLEAN_ANON_FUNCTION_DECLARATION = 'function ($1) {'
 var MULTI_NEWLINE = /(\r?\n)(\r?\n)/g
+var EOL_SEMICOLON = /;\r?\n/
 var EOL = os.EOL
 
 module.exports.transform = function (file) {
@@ -30,6 +31,7 @@ module.exports.transform = function (file) {
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
     .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
     .replace(MULTI_NEWLINE, EOL)
+    .replace(EOL_SEMICOLON, '')
 }
 
 module.exports.load = function (opts, cb) {
