@@ -38,7 +38,7 @@ getFiles(function (err, files) {
   files.forEach(function (file) {
     file.data = fmt.transform(file.data)
     processFile(file)
-  });
+  })
 })
 
 function error (err) {
