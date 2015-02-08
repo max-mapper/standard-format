@@ -2,7 +2,6 @@
 
 standard-format is only possible due to the excellent work of the following collaborators:
 
-<?xml version="1.0" encoding="UTF-8"?>
 <table>
   <tbody>
     <tr>
