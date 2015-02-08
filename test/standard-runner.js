@@ -20,7 +20,7 @@ function highlightLine (line, issue) {
   var str = '\n'
   str += line
   str += '\n'
-  for (var i = 1; i <= issue.column; ++i) {
+  for (var i = 0; i <= issue.column; ++i) {
     str += i < issue.column ? ' ' : '^'
   }
   return str
