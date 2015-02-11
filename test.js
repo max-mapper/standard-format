@@ -18,7 +18,10 @@ console.log (x)
 (function () {})()
 (function  () {})()
 
-(function f() {})()
+if (true) {
+  [1,2,3].forEach(function (x) { console.log(x*2); })
+}
+
 (function f2 () {})()
 (function   fooz() {})()
 (function   foox () {})()

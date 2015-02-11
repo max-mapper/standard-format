@@ -22,10 +22,10 @@ var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
 var CLEAN_ANON_FUNCTION_DECLARATION = 'function ($1) {'
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
-var SOL_SEMICOLON = /\r?\n[\t ]*(\(|\[)/g
+var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
 var EOL_WHITESPACE = /[\t ]+\r?\n/g
-var SOL_SEMICOLON_BRACE = EOL + ";$1"
+var SOL_SEMICOLON_BRACE = "$1;$2"
 
 module.exports.transform = function (file) {
   return file
