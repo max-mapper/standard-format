@@ -25,7 +25,7 @@ var EOL_SEMICOLON = /;\r?\n/g
 var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
 var EOL_WHITESPACE = /[\t ]+\r?\n/g
-var SOL_SEMICOLON_BRACE = "$1;$2"
+var SOL_SEMICOLON_BRACE = '$1;$2'
 
 module.exports.transform = function (file) {
   return file
