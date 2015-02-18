@@ -1,5 +1,6 @@
 var path = require('path')
 var fs = require('fs')
+var os = require('os')
 var glob = require('glob')
 var findRoot = require('find-root')
 var Minimatch = require('minimatch').Minimatch
