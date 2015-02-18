@@ -44,7 +44,7 @@ function check (data, done) {
       acc.push(parse(line))
     return acc
   }, []))
-  .on('data', function(reports) {
+  .on('data', function (reports) {
     debug('reports %j', reports)
     finish(null, reports)
   })
