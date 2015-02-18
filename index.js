@@ -1,5 +1,4 @@
 var path = require('path')
-var os = require('os')
 var fs = require('fs')
 var glob = require('glob')
 var findRoot = require('find-root')

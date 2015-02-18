@@ -11,15 +11,17 @@ x = 2
 
 // standard-format has nothing to say about unused vars
 // so this is here to prevent invalid test cases
-console.log (x)
+console.log(x)
 
 // sol semicolons and parens spacing
 (function() {})()
 (function () {})()
 (function  () {})()
 
+var test = "what";
+
 if (true) {
-  [1,2,3].forEach(function (x) { console.log(x*2); })
+  ["a","b","c"].forEach(function (x) { console.log(x*2); })
 }
 
 (function f2 () {})()
