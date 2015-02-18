@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/maxogden/standard-format",
   "dependencies": {
+    "esformatter": "^0.4.3",
+    "esformatter-eol-last": "^1.0.0",
+    "esformatter-literal-notation": "^1.0.0",
+    "esformatter-quotes": "^1.0.0",
     "find-root": "^0.1.1",
     "glob": "^4.3.5",
     "minimatch": "^2.0.1",
