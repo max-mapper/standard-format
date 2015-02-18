@@ -1,71 +1,32 @@
+
 # standard-format
 
-**experimental** auto formatter for the easier cases in [standard](https://www.npmjs.com/package/standard)
+  [![Build Status](https://travis-ci.org/maxogden/standard-format.svg)](https://travis-ci.org/maxogden/standard-format)
 
-[![NPM](https://nodei.co/npm/standard-format.png)](https://nodei.co/npm/standard-format/)
+  **experimental** auto formatter for the easier cases in [standard](https://www.npmjs.com/package/standard)
 
-## try it out
+  [![NPM](https://nodei.co/npm/standard-format.png)](https://nodei.co/npm/standard-format/)
 
-```
-$ npm install standard-format -g
-$ standard-format
-```
+## Installation
 
-currently converts this:
+  Install with npm
 
-```js
-function() {}
-function () {}
-function  () {}
+    $ npm install -g standard-format
 
+## Example Usage
 
-function f() {}
-function f () {}
-function   foo() {}
-function   foo () {}
-function   foo   () {}
+  Output all formatted javascript in a directory and subdirectories to stdout
 
+    $ standard-format
 
-function(){}
-function (){}
-function () {}
-function ()  {}
+  Format all javascript files, overwriting them into standard format
 
+    $ standard-format -w
 
-function(){}
-function foo(){}
-function foo() {}
-function foo()  {}
+  Format javascript over stdin
 
+    $ standard-format < file.js > formatted-file.js
 
-function(){}
-function foo (){}
-function foo ()  {}
-```
+  Format and overwrite specific files
 
-into this:
-
-```js
-function () {}
-function () {}
-function () {}
-function f () {}
-function f () {}
-function foo () {}
-function foo () {}
-function foo () {}
-
-function () {}
-function () {}
-function () {}
-function () {}
-
-function () {}
-function foo () {}
-function foo () {}
-function foo () {}
-
-function () {}
-function foo () {}
-function foo () {}
-```
+    $ standard-format -w file1.js file2.js
