@@ -18,6 +18,7 @@ console.log(x)
 (function () {})()
 (function  () {})()
 
+//bad comment -- needs a space after slashes
 var test = "what";
 
 if (true) {
