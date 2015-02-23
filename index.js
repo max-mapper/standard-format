@@ -26,7 +26,6 @@ var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
 // var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
-var EOL_WHITESPACE = /[\t ]+\r?\n/g
 // var SOL_SEMICOLON_BRACE = '$1;$2'
 
 module.exports.transform = function (file) {
@@ -37,7 +36,6 @@ module.exports.transform = function (file) {
     .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
     .replace(EOL_SEMICOLON, EOL)
 //  .replace(SOL_SEMICOLON, SOL_SEMICOLON_BRACE)
-    .replace(EOL_WHITESPACE, EOL)
     .replace(MULTI_NEWLINE, EOL + EOL)
 }
 
