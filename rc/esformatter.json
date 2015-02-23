@@ -43,7 +43,7 @@
       "DoWhileStatement" : ">=1",
       "DoWhileStatementOpeningBrace" : 0,
       "DoWhileStatementClosingBrace" : ">=1",
-      "EndOfFile" : -1,
+      "EndOfFile" : 0,
       "EmptyStatement" : 0,
       "FinallyKeyword" : -1,
       "FinallyOpeningBrace" : 0,
