@@ -31,7 +31,7 @@
     "value" : "\n",
 
     "before" : {
-      "AssignmentExpression" : ">=1",
+      "AssignmentExpression" : ">=0",
       "AssignmentOperator": 0,
       "BlockStatement" : 0,
       "CallExpression" : -1,
