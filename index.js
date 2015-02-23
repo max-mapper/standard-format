@@ -15,9 +15,7 @@ var DEFAULT_IGNORE = [
 ]
 
 var NAMED_FUNCTION_NOSPACE = /function(\s+)?(\w+)(\s+)?\(/ig
-var ANON_FUNCTION_NOSPACE = /function(\s+)?\(/ig
 var NAMED_FUNCTION_SPACE = 'function $2 ('
-var ANON_FUNCTION_SPACE = 'function ('
 var FUNCTION_DECLARATION = /function\s(\w+)\s\((.+)?\)(\s+)?\{/ig
 var ANON_FUNCTION_DECLARATION = /function\s\((.+)?\)(\s+)?\{/ig
 var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
@@ -31,7 +29,6 @@ var EOL = os.EOL
 module.exports.transform = function (file) {
   return formatter.format(file, ESFORMATTER_CONFIG)
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
-    .replace(ANON_FUNCTION_NOSPACE, ANON_FUNCTION_SPACE)
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
     .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
     .replace(EOL_SEMICOLON, EOL)
