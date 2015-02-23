@@ -13,11 +13,6 @@ x = 2
 // so this is here to prevent invalid test cases
 console.log(x)
 
-// sol semicolons and parens spacing
-(function() {})()
-(function () {})()
-(function  () {})()
-
 //bad comment -- needs a space after slashes
 var test = "what";
 
@@ -25,24 +20,31 @@ if (test) {
   ["a","b","c"].forEach(function (x) { console.log(x*2); })
 }
 
-(function f2 () {})()
-(function   fooz() {})()
-(function   foox () {})()
-(function   foos   () {})()
+function f2 () {}
+function   fooz() {}
+function   foox () {}
+function   foos   () {}
+
+f2()
+fooz()
+foox()
+foos()
+
+function foo(){}
+function bar() {}
+function quux()  {}
 
 
-(function(){})()
-(function (){})()
-(function () {})()
-(function ()  {})()
+foo()
+bar()
+quux()
 
 
-(function(){})()
-(function foo(){})()
-(function bar() {})()
-(function quux()  {})()
+function food (){}
+function foot ()  {}
 
 
-(function(){})()
-(function food (){})()
-(function foot ()  {})()
+food()
+foot()
+
+
