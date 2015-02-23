@@ -21,7 +21,7 @@ console.log(x)
 //bad comment -- needs a space after slashes
 var test = "what";
 
-if (true) {
+if (test) {
   ["a","b","c"].forEach(function (x) { console.log(x*2); })
 }
 
