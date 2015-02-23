@@ -1,11 +1,18 @@
 var test = require('tape')
 var fmt = require('../').transform
 
-test('singleline ', function (t) {
-  t.plan(1)
-  var program = 'if (!opts) opts = {}'
+var noops = [
+  { str: 'if (!opts) opts = {}\n',
+    msg: 'noop on single line conditional assignment' },
 
-  var expected = 'if (!opts) opts = {}\n'
+  { str: 'var g = { name: f, data: fs.readFileSync(f).toString() }\n',
+    msg: 'noop on single line object assignment'
+  }
+]
 
-  t.equal(fmt(program), expected)
+test('singleline noop expressions', function (t) {
+  t.plan(noops.length)
+  noops.forEach(function (obj) {
+    t.equal(fmt(obj.str), obj.str, obj.msg)
+  })
 })
