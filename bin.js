@@ -14,7 +14,7 @@ function processFile (transformed) {
   if (argv.write && transformed.name !== 'stdin') {
     fs.writeFileSync(transformed.name, transformed.data)
   } else {
-    console.log(transformed.data)
+    process.stdout.write(transformed.data)
   }
 }
 
