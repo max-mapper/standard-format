@@ -20,17 +20,21 @@ var FUNCTION_DECLARATION = /function\s(\w+)\s\((.+)?\)(\s+)?\{/ig
 var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
+var SOF_NEWLINES = /^(\r?\n)+/g
 // var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
 // var SOL_SEMICOLON_BRACE = '$1;$2'
 
 module.exports.transform = function (file) {
+  file = file
+    .replace(MULTI_NEWLINE, EOL + EOL)
+
   return formatter.format(file, ESFORMATTER_CONFIG)
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
     .replace(EOL_SEMICOLON, EOL)
+    .replace(SOF_NEWLINES, '')
 //  .replace(SOL_SEMICOLON, SOL_SEMICOLON_BRACE)
-    .replace(MULTI_NEWLINE, EOL + EOL)
 }
 
 module.exports.load = function (opts, cb) {
