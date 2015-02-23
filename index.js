@@ -17,9 +17,7 @@ var DEFAULT_IGNORE = [
 var NAMED_FUNCTION_NOSPACE = /function(\s+)?(\w+)(\s+)?\(/ig
 var NAMED_FUNCTION_SPACE = 'function $2 ('
 var FUNCTION_DECLARATION = /function\s(\w+)\s\((.+)?\)(\s+)?\{/ig
-var ANON_FUNCTION_DECLARATION = /function\s\((.+)?\)(\s+)?\{/ig
 var CLEAN_FUNCTION_DECLARATION = 'function $1 ($2) {'
-var CLEAN_ANON_FUNCTION_DECLARATION = 'function ($1) {'
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
 // var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
@@ -30,7 +28,6 @@ module.exports.transform = function (file) {
   return formatter.format(file, ESFORMATTER_CONFIG)
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
-    .replace(ANON_FUNCTION_DECLARATION, CLEAN_ANON_FUNCTION_DECLARATION)
     .replace(EOL_SEMICOLON, EOL)
 //  .replace(SOL_SEMICOLON, SOL_SEMICOLON_BRACE)
     .replace(MULTI_NEWLINE, EOL + EOL)
