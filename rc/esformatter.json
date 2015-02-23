@@ -43,7 +43,7 @@
       "DoWhileStatement" : ">=1",
       "DoWhileStatementOpeningBrace" : 0,
       "DoWhileStatementClosingBrace" : ">=1",
-      "EndOfFile" : 0,
+      "EndOfFile" : 1,
       "EmptyStatement" : 0,
       "FinallyKeyword" : -1,
       "FinallyOpeningBrace" : 0,
@@ -307,8 +307,7 @@
   "plugins": [
     "esformatter-quotes",
     "esformatter-literal-notation",
-    "esformatter-spaced-lined-comment",
-    "esformatter-eol-last"
+    "esformatter-spaced-lined-comment"
   ],
 
   "quotes": {
