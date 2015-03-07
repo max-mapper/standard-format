@@ -24,17 +24,29 @@ var SOF_NEWLINES = /^(\r?\n)+/g
 // var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
 // var SOL_SEMICOLON_BRACE = '$1;$2'
+var SHEBANGLINE = /^#!.*\n/
 
 module.exports.transform = function (file) {
   file = file
     .replace(MULTI_NEWLINE, EOL + EOL)
 
-  return formatter.format(file, ESFORMATTER_CONFIG)
+  var shebang = SHEBANGLINE.exec(file)
+  if (shebang) {
+    file = file.substring(shebang[0].length)
+  }
+
+  var formatted = formatter.format(file, ESFORMATTER_CONFIG)
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
     .replace(FUNCTION_DECLARATION, CLEAN_FUNCTION_DECLARATION)
     .replace(EOL_SEMICOLON, EOL)
     .replace(SOF_NEWLINES, '')
 //  .replace(SOL_SEMICOLON, SOL_SEMICOLON_BRACE)
+
+  if (shebang) {
+    formatted = shebang[0] + formatted
+  }
+
+  return formatted
 }
 
 module.exports.load = function (opts, cb) {
