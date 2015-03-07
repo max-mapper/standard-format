@@ -40,8 +40,9 @@ function check (data, done) {
   .pipe(split())
   .pipe(skip(1))
   .pipe(reduce(function (acc, line) {
-    if (line)
+    if (line) {
       acc.push(parse(line))
+    }
     return acc
   }, []))
   .on('data', function (reports) {

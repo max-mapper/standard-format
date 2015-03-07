@@ -17,15 +17,19 @@ console.log(x)
 var test = "what";
 
 if (test) {
-  ["a","b","c"].forEach(function (x) { console.log(x*2); })
+  ["a","b","c"].forEach(function (x) { 
+    console.log(x*2); 
+  })
 }
+
+var obj = {val: 2}
 
 function f2 () {}
 function   fooz() {}
 function   foox () {}
 function   foos   () {}
 
-f2()
+f2(obj)
 fooz()
 foox()
 foos()
