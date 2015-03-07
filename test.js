@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 // This file is automatically ran through standard-format
 // and checked by standard. Add test cases for the formatter by adding
