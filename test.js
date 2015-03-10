@@ -127,3 +127,8 @@ function noExtraBraces() {
   }
 }
 noExtraBraces()
+
+
+// weird bug function
+for (var i = 0 ; i < 42; i++ ) {
+}

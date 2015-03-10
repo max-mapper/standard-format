@@ -14,7 +14,7 @@ var DEFAULT_IGNORE = [
   '**/bundle.js'
 ]
 
-var NAMED_FUNCTION_NOSPACE = /function(\s+)?(\w+)(\s+)?\(/ig
+var NAMED_FUNCTION_NOSPACE = /function([ \t]+)?(\w+)(\s+)?\(/ig
 var NAMED_FUNCTION_SPACE = 'function $2 ('
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
