@@ -34,7 +34,11 @@ function   fooz() {}
 function   foox () {}
 function   foos   () {}
 
-f2(obj)
+f2( obj)
+f2(obj )
+f2( obj )
+f2( obj, obj )
+f2( obj,obj )
 fooz()
 foox()
 foos()
