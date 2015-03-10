@@ -100,8 +100,8 @@ function noExtraBraces() {
 
     return 42
   }
-  catch (e) {
-
+  catch (e) 
+  {
 
 
     return 43

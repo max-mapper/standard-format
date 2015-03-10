@@ -12,7 +12,7 @@
       "BlockStatement" : -1,
       "CallExpression" : -1,
       "ConditionalExpression" : -1,
-      "CatchOpeningBrace" : "<=2",
+      "CatchOpeningBrace" : 0,
       "CatchClosingBrace" : -1,
       "CatchKeyword": 0,
       "DeleteOperator" : -1,
