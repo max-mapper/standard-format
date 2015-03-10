@@ -85,22 +85,36 @@ noExtraSingle()
 function noExtraBraces() {
 
 
-  if (noExtraBraces != null) {
+  if (noExtraBraces != null) 
+
+  {
 
     return 42
   }
 
-  switch (noExtraBraces) {
+  else 
+
+  {
+
+    return 42
+  }
+
+  switch(noExtraBraces) 
+
+  {
 
   case null:
     return 42
   }
 
-  try {
+  try 
+
+  {
 
     return 42
   }
   catch (e) 
+
   {
 
 
