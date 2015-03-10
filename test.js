@@ -26,10 +26,11 @@ if (test) {
 
 var obj = {val: 2}
 
-// test: space after function name
-;[1].forEach(function() {})
+// space after function name and arg paren
+;[1].forEach(function(){})
 
-function f2 () {}
+// space after argument paren
+function f2 (){}
 function   fooz() {}
 function   foox () {}
 function   foos   () {}

@@ -147,7 +147,7 @@
       "ForStatementSemicolon" : -1,
       "FunctionDeclarationOpeningBrace" : 1,
       "FunctionDeclarationClosingBrace" : -1,
-      "FunctionExpressionOpeningBrace" : -1,
+      "FunctionExpressionOpeningBrace" : 1,
       "FunctionExpressionClosingBrace" : -1,
       "IfStatementConditionalOpening" : -1,
       "IfStatementConditionalClosing" : -1,
