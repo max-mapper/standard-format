@@ -19,9 +19,7 @@ var NAMED_FUNCTION_SPACE = 'function $2 ('
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
 var SOF_NEWLINES = /^(\r?\n)+/g
-// var SOL_SEMICOLON = /((?:\r?\n|^)[\t ]*)(\(|\[)/g
 var EOL = os.EOL
-// var SOL_SEMICOLON_BRACE = '$1;$2'
 var SHEBANGLINE = /^#!.*\n/
 
 module.exports.transform = function (file) {
@@ -37,7 +35,6 @@ module.exports.transform = function (file) {
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
     .replace(EOL_SEMICOLON, EOL)
     .replace(SOF_NEWLINES, '')
-//  .replace(SOL_SEMICOLON, SOL_SEMICOLON_BRACE)
 
   if (shebang) {
     formatted = shebang[0] + formatted
