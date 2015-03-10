@@ -139,3 +139,4 @@ function getRequests (cb) {
       cb(err, resp, body)
   })
 }
+getRequests()
