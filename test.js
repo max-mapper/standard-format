@@ -132,9 +132,3 @@ noExtraBraces()
 // weird bug function
 for (var i = 0 ; i < 42; i++ ) {
 }
-
-
-var commaFirst1
-  , commaFirst2
-
-console.log(commaFirst1, commaFirst2)

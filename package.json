@@ -24,7 +24,6 @@
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
     "esformatter-spaced-lined-comment": "^2.0.0",
-    "esformatter-var-each": "^1.0.0",
     "find-root": "^0.1.1",
     "glob": "^4.3.5",
     "minimatch": "^2.0.1",
