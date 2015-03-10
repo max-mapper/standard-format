@@ -217,7 +217,7 @@
       "ForStatementClosingBrace" : -1,
       "ForStatementOpeningBrace" : -1,
       "ForStatementSemicolon" : -1,
-      "FunctionReservedWord": -1,
+      "FunctionReservedWord": 1,
       "FunctionName" : -1,
       "FunctionExpressionOpeningBrace" : -1,
       "FunctionExpressionClosingBrace" : -1,

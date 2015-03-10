@@ -25,6 +25,8 @@ if (test) {
 
 var obj = {val: 2}
 
+;[1].forEach(function() {})
+
 function f2 () {}
 function   fooz() {}
 function   foox () {}
