@@ -18,6 +18,7 @@ console.log(x)
 var test = "what";
 
 if (test) {
+  // test: infix commas
   ["a","b","c"].forEach(function (x) { 
     console.log(x*2); 
   })
@@ -25,6 +26,7 @@ if (test) {
 
 var obj = {val: 2}
 
+// test: space after function name
 ;[1].forEach(function() {})
 
 function f2 () {}
@@ -55,4 +57,54 @@ food()
 foot()
 
 
+// test: no block padding
+var lessThanThreeNewlines = function () {
 
+  return 2;
+}
+lessThanThreeNewlines()
+
+// at most one newline after opening brace
+function noExtraNewlines() {
+
+
+  return 2;
+}
+noExtraNewlines()
+
+// at most one newline after opening brace
+function noExtraSingle() { return 2 }
+noExtraSingle()
+
+// at most one newline after opening brace
+function noExtraBraces() {
+
+
+  if (noExtraBraces != null) {
+
+    return 42
+  }
+
+  switch (noExtraBraces) {
+
+  case null:
+    return 42
+  }
+
+  try {
+
+    return 42
+  }
+  catch (e) {
+
+
+
+    return 43
+  }
+
+  for (var i in noExtraBraces) {
+
+    return i
+  }
+}
+noExtraBraces()
