@@ -144,7 +144,7 @@
       "AssignmentOperator" : 1,
       "BinaryExpression": -1,
       "ForStatementClosingBrace" : -1,
-      "ForStatementSemicolon" : -1,
+      "ForStatementSemicolon" : 0,
       "FunctionDeclarationOpeningBrace" : 1,
       "FunctionDeclarationClosingBrace" : -1,
       "FunctionExpressionOpeningBrace" : 1,
