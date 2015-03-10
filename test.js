@@ -114,11 +114,8 @@ function noExtraBraces() {
     return 42
   }
   catch (e) 
-
+  
   {
-
-
-    return 43
   }
 
   for (var i in noExtraBraces) {
