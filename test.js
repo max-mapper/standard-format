@@ -18,7 +18,7 @@ console.log(x)
 var test = "what";
 
 if (test) {
-  ;["a","b","c"].forEach(function (x) { 
+  ["a","b","c"].forEach(function (x) { 
     // test: infix commas
     console.log(x*2); 
   })
