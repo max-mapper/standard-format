@@ -132,3 +132,10 @@ noExtraBraces()
 // weird bug function
 for (var i = 0 ; i < 42; i++ ) {
 }
+
+function getRequests (cb) {
+  foo({
+  }, function (err, resp, body) {
+      cb(err, resp, body)
+  })
+}
