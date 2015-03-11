@@ -25,6 +25,7 @@ if (test) {
 }
 
 var obj = {val: 2}
+var another = { foo: 'bar' }
 
 // space after function name and arg paren
 ;[1].forEach(function(){})
@@ -35,6 +36,8 @@ function   fooz() {}
 function   foox () {}
 function   foos   () {}
 
+var x = function() {}
+
 f2( obj)
 f2(obj )
 f2( obj )
@@ -43,6 +46,7 @@ f2( obj,obj )
 fooz()
 foox()
 foos()
+x(another)
 
 function foo(){}
 function bar() {}
