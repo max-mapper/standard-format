@@ -36,7 +36,7 @@ function   fooz() {}
 function   foox () {}
 function   foos   () {}
 
-var x = function() {}
+var anon = function() {}
 
 f2( obj)
 f2(obj )
@@ -46,7 +46,7 @@ f2( obj,obj )
 fooz()
 foox()
 foos()
-x(another)
+anon(another)
 
 function foo(){}
 function bar() {}
