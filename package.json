@@ -42,6 +42,6 @@
     "tape": "^3.5.0"
   },
   "standard": {
-    "ignore": ["test.js","**test/failing/**"]
+    "ignore": ["test.js", "**test/failing/**"]
   }
 }
