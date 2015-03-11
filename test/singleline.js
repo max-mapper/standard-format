@@ -11,6 +11,9 @@ var noops = [
   {
     str: '{foo: \'bar\'}\n',
     msg: 'Dont add padding to object braces'
+  },
+  { str: "var x = ['test.js', '**test/failing/**']\n",
+    msg: 'Noop on singleline arrays'
   }
 ]
 

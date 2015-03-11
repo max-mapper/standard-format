@@ -75,6 +75,16 @@ var noops = [
 
     msg: 'Dont mess with function tabbing'
 
+  },
+  {
+    program:
+    'var obj = {\n' +
+    "  'standard': {\n" +
+    "    'ignore': ['test.js', '**test/failing/**']\n" +
+    '  }\n' +
+    '}\n',
+
+    msg: 'allow single line object arrays'
   }
 ]
 
