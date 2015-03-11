@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "./bin.js",
   "scripts": {
-    "test": "standard && tape test/*.js",
+    "test": "standard && tape test/*.js | tap-spec",
     "test-file": "<test.js ./bin.js | standard"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "split": "^0.3.3",
     "standard": "*",
     "stream-reduce": "^1.0.3",
+    "tap-spec": "^2.2.2",
     "tape": "^3.5.0"
   },
   "standard": {
