@@ -2,10 +2,11 @@ var test = require('tape')
 var fmt = require('../../').transform
 var run = require('../standard-runner')
 var fs = require('fs')
+var path = require('path')
 var standard = require('standard')
 
 var files = [
-  { path: './obfuscated-files/standard-format-torture.js' }
+  { path: path.resolve(path.join(__dirname, '/obfuscated-files/standard-format-torture.js'))}
 ]
 
 test('obfuscated files', function (t) {

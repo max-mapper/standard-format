@@ -6,7 +6,8 @@
   "bin": "./bin.js",
   "scripts": {
     "test": "standard && tape test/*.js | tap-spec",
-    "test-file": "<test.js ./bin.js | standard"
+    "test-file": "<test.js ./bin.js | standard",
+    "failing": "standard && tape test/failing/*.js | tap-spec"
   },
   "repository": {
     "type": "git",
