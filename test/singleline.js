@@ -39,6 +39,16 @@ var transforms = [
     str: 'var hi\n hi =    1\n',
     expect: 'var hi\nhi = 1\n',
     msg: 'Squash spaces around assignment operator'
+  },
+  {
+    str: 'function foo (x,y,z) {}\n',
+    expect: 'function foo (x, y, z) {}\n',
+    msg: 'Space after commas in function parameters'
+  },
+  {
+    str: '[1,2,3]\n',
+    expect: '[1, 2, 3]\n',
+    msg: 'Space after commas in array'
   }
 ]
 

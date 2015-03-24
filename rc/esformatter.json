@@ -236,7 +236,7 @@
       "ObjectExpressionClosingBrace": -1,
       "PropertyName" : -1,
       "PropertyValue" : -1,
-      "ParameterComma" : -1,
+      "ParameterComma" : 1,
       "ParameterList" : -1,
       "SwitchDiscriminantOpening" : -1,
       "SwitchDiscriminantClosing" : 1,
