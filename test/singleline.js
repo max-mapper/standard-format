@@ -29,6 +29,16 @@ var transforms = [
     str: 'var x = function() {}\n',
     expect: 'var x = function () {}\n',
     msg: 'Anonomous function spacing between keyword and arguments'
+  },
+  {
+    str: 'var     hi =    1\n',
+    expect: 'var hi = 1\n',
+    msg: 'Squash spaces around variable value'
+  },
+  {
+    str: 'var hi\n hi =    1\n',
+    expect: 'var hi\nhi = 1\n',
+    msg: 'Squash spaces around assignment operator'
   }
 ]
 
