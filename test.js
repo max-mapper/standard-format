@@ -31,7 +31,7 @@ var another = { foo: 'bar' }
 ;[1].forEach(function(){})
 
 // space after argument paren
-function f2 (){}
+function f2 (x,y,z){}
 function   fooz() {}
 function   foox () {}
 function   foos   () {}
