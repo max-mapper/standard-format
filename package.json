@@ -1,6 +1,6 @@
 {
   "name": "standard-format",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "attempts to reformat javascript to comply with feross/standard style",
   "main": "index.js",
   "bin": "./bin.js",
