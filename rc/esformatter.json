@@ -245,7 +245,7 @@
       "TryOpeningBrace" : -1,
       "TryClosingBrace" : -1,
       "UnaryExpressionOperator": -1,
-      "VariableName" : -1,
+      "VariableName" : 1,
       "WhileStatementConditionalOpening" : -1,
       "WhileStatementConditionalClosing" : -1,
       "WhileStatementOpeningBrace" : -1,

@@ -36,6 +36,11 @@ var transforms = [
     msg: 'Squash spaces around variable value'
   },
   {
+    str: 'var hi           = 1\n',
+    expect: 'var hi = 1\n',
+    msg: 'Space after variable name'
+  },
+  {
     str: 'var hi\n hi =    1\n',
     expect: 'var hi\nhi = 1\n',
     msg: 'Squash spaces around assignment operator'
