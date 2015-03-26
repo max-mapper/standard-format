@@ -4,11 +4,43 @@ var fmt = require('./')
 var fs = require('fs')
 var stdin = require('stdin')
 var argv = require('minimist')(process.argv.slice(2), {
-  boolean: 'write',
+  boolean: ['help', 'version', 'write'],
   alias: {
+    h: 'help',
     w: 'write'
   }
 })
+
+if (argv.help) {
+  console.log(function () {
+  /*
+  standard-format - Auto formatter for the easier cases in standard
+
+  Usage:
+      standard-format <flags> [FILES...]
+
+      If FILES is omitted, then all JavaScript source files (*.js) in the current
+      working directory are checked, recursively.
+
+      These paths are automatically excluded:
+      node_modules/, .git/, *.min.js, bundle.js
+
+  Flags:
+          --version   Show current version.
+      -w  --write     Directly modify input files.
+      -h, --help      Show usage information.
+
+  Readme:  https://github.com/maxogden/standard-format
+
+  */
+  }.toString().split(/\n/).slice(2, -2).join('\n'))
+  process.exit(0)
+}
+
+if (argv.version) {
+  console.log(require('./package.json').version)
+  process.exit(0)
+}
 
 function processFile (transformed) {
   if (argv.write && transformed.name !== 'stdin') {
