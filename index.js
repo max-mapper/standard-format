@@ -20,25 +20,15 @@ var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
 var SOF_NEWLINES = /^(\r?\n)+/g
 var EOL = os.EOL
-var SHEBANGLINE = /^#!.*\n/
 
 module.exports.transform = function (file) {
   file = file
     .replace(MULTI_NEWLINE, EOL + EOL)
 
-  var shebang = SHEBANGLINE.exec(file)
-  if (shebang) {
-    file = file.substring(shebang[0].length)
-  }
-
   var formatted = formatter.format(file, ESFORMATTER_CONFIG)
     .replace(NAMED_FUNCTION_NOSPACE, NAMED_FUNCTION_SPACE)
     .replace(EOL_SEMICOLON, EOL)
     .replace(SOF_NEWLINES, '')
-
-  if (shebang) {
-    formatted = shebang[0] + formatted
-  }
 
   return formatted
 }
