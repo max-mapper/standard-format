@@ -141,3 +141,8 @@ function getRequests (cb) {
   })
 }
 getRequests()
+
+// spacing around Property names (key-spacing)
+void {
+  testing :123
+}
