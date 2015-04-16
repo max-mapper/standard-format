@@ -30,3 +30,7 @@
   Format and overwrite specific files
 
     $ standard-format -w file1.js file2.js
+
+### Editor plugins
+
+  - Sublime Text: [sublime-standard-format](https://packagecontrol.io/packages/StandardFormat)
