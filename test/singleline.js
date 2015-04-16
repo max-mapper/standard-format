@@ -80,6 +80,16 @@ var transforms = [
     str: 'var x = 1;\n',
     expect: 'var x = 1\n',
     msg: 'Remove semicolons'
+  },
+  {
+    str: 'var x = {key:123}\n',
+    expect: 'var x = {key: 123}\n',
+    msg: 'Space after colon (key-spacing)'
+  },
+  {
+    str: 'var x = {key : 123}\n',
+    expect: 'var x = {key: 123}\n',
+    msg: 'No Space before colon (key-spacing)'
   }
 ]
 
