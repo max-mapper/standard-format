@@ -3,10 +3,10 @@ var fmt = require('../').transform
 
 var noops = [
   { str: 'if (!opts) opts = {}\n',
-    msg: 'noop on single line conditional assignment' },
+    msg: 'Noop on single line conditional assignment' },
 
   { str: 'var g = { name: f, data: fs.readFileSync(f).toString() }\n',
-    msg: 'noop on single line object assignment'
+    msg: 'Noop on single line object assignment'
   },
   {
     str: '{foo: \'bar\'}\n',
@@ -14,6 +14,12 @@ var noops = [
   },
   { str: "var x = ['test.js', '**test/failing/**']\n",
     msg: 'Noop on singleline arrays'
+  },
+  { str: 'function x () {}\n',
+    msg: 'Noop on named functions correctly spaced'
+  },
+  { str: 'window.wrapFunctionsUntil(1)\n',
+    msg: 'Noop non-functions with function in the name'
   }
 ]
 
@@ -28,7 +34,22 @@ var transforms = [
   {
     str: 'var x = function() {}\n',
     expect: 'var x = function () {}\n',
-    msg: 'Anonomous function spacing between keyword and arguments'
+    msg: 'Anonymous function spacing between keyword and arguments'
+  },
+  {
+    str: 'var x = function (y){}\n',
+    expect: 'var x = function (y) {}\n',
+    msg: 'Anonymous function spacing between arguments and opening brace'
+  },
+  {
+    str: 'function xx() {}\n',
+    expect: 'function xx () {}\n',
+    msg: 'Named function spacing between keyword and arguments'
+  },
+  {
+    str: 'function xx (y){}\n',
+    expect: 'function xx (y) {}\n',
+    msg: 'Named function spacing between arguments and opening brace'
   },
   {
     str: 'var     hi =    1\n',
@@ -54,6 +75,11 @@ var transforms = [
     str: '[1,2,3]\n',
     expect: '[1, 2, 3]\n',
     msg: 'Space after commas in array'
+  },
+  {
+    str: 'var x = 1;\n',
+    expect: 'var x = 1\n',
+    msg: 'Remove semicolons'
   }
 ]
 
