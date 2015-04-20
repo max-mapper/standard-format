@@ -149,7 +149,7 @@
       "FunctionDeclarationClosingBrace" : -1,
       "FunctionExpressionOpeningBrace" : 1,
       "FunctionExpressionClosingBrace" : -1,
-      "IfStatementConditionalOpening" : -1,
+      "IfStatementConditionalOpening" : 1,
       "IfStatementConditionalClosing" : -1,
       "IfStatementOpeningBrace" : 1,
       "IfStatementClosingBrace" : -1,
