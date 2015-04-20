@@ -8,7 +8,7 @@
 var x = 1;
 
 // eol whitespace
-x = 2
+x = 2 
 
 // standard-format has nothing to say about unused vars
 // so this is here to prevent invalid test cases
@@ -18,9 +18,9 @@ console.log(x)
 var test = "what";
 
 if(test) {
-  ["a","b","c"].forEach(function (x) {
+  ["a","b","c"].forEach(function (x) { 
     // test: infix commas
-    console.log(x*2);
+    console.log(x*2); 
   })
 }
 
@@ -89,21 +89,21 @@ noExtraSingle()
 function noExtraBraces() {
 
 
-  if (noExtraBraces != null)
+  if (noExtraBraces != null) 
 
   {
 
     return 42
   }
 
-  else
+  else 
 
   {
 
     return 42
   }
 
-  switch(noExtraBraces)
+  switch(noExtraBraces) 
 
   {
 
@@ -111,14 +111,14 @@ function noExtraBraces() {
     return 42
   }
 
-  try
+  try 
 
   {
 
     return 42
   }
-  catch (e)
-
+  catch (e) 
+  
   {
   }
 
