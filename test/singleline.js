@@ -90,6 +90,16 @@ var transforms = [
     str: 'var x = {key : 123}\n',
     expect: 'var x = {key: 123}\n',
     msg: 'No Space before colon (key-spacing)'
+  },
+  {
+    str: 'var x = {key:123,more:456}\n',
+    expect: 'var x = {key: 123, more: 456}\n',
+    msg: 'Space after comma in keys'
+  },
+  {
+    str: 'if(true){}\n',
+    expect: 'if (true) {}\n',
+    msg: 'Space after if'
   }
 ]
 
