@@ -148,5 +148,6 @@ void {
 }
 
 // Test start of line semicolins
-var semicolins = 2
+var gloopy = 12
 [1,2,3].map(function () {})
+console.log(gloopy)
