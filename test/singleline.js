@@ -72,8 +72,8 @@ var transforms = [
     msg: 'Space after commas in function parameters'
   },
   {
-    str: '[1,2,3]\n',
-    expect: '[1, 2, 3]\n',
+    str: 'var array = [1,2,3]\n',
+    expect: 'var array = [1, 2, 3]\n',
     msg: 'Space after commas in array'
   },
   {
