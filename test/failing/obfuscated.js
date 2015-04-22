@@ -9,7 +9,9 @@ var files = [
   { path: path.resolve(path.join(__dirname, '/obfuscated-files/standard-format-torture.js'))}
 ]
 
-test('obfuscated files', function (t) {
+test.skip('obfuscated files', function (t) {
+  // Pass torture test
+  // https://github.com/maxogden/standard-format/issues/27
   files.forEach(function (obj) {
     fs.readFile(obj.path, function (err, data) {
       t.error(err, 'no errors opening the file')
