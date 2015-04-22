@@ -146,3 +146,7 @@ getRequests()
 void {
   testing :123
 }
+
+// Test start of line semicolins
+var x = 2
+[1,2,3].map(function () {})
