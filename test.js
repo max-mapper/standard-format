@@ -148,5 +148,5 @@ void {
 }
 
 // Test start of line semicolins
-var x = 2
+var semicolins = 2
 [1,2,3].map(function () {})
