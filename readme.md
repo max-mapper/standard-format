@@ -2,6 +2,7 @@
 # standard-format
 
   [![Build Status](https://travis-ci.org/maxogden/standard-format.svg)](https://travis-ci.org/maxogden/standard-format)
+  [![Dependency Status](https://david-dm.org/maxogden/standard-format.svg?style=flat-square)](https://david-dm.org/maxogden/standard-format)
 
   **experimental** auto formatter for the easier cases in [standard](https://www.npmjs.com/package/standard)
 
