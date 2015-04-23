@@ -52,7 +52,7 @@ var collapse = [
     'var x = 123 /* Useful comment \n' +
     'that spans two lines */\n',
 
-    msg: 'Remove semicolin from multiline comment'
+    msg: 'Remove semicolon from multiline comment'
   }
 ]
 
