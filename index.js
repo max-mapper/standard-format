@@ -16,7 +16,7 @@ var DEFAULT_IGNORE = [
 
 var MULTI_NEWLINE = /((?:\r?\n){3,})/g
 var EOL_SEMICOLON = /;\r?\n/g
-var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/\/[\s\w]*\r?\n)/g
+var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[\/\*][\s\w\*\/]*\r?\n)/g
 var SOF_NEWLINES = /^(\r?\n)+/g
 var EOL = os.EOL
 
