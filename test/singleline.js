@@ -109,3 +109,15 @@ test('singleline transforms', function (t) {
     t.equal(fmt(obj.str), obj.expect, obj.msg)
   })
 })
+
+var cr = new RegExp(/\n/g)
+var crlf = '\r\n'
+
+test('singleline transforms CRLF', function (t) {
+  t.plan(transforms.length)
+  transforms.forEach(function (obj) {
+    obj.str = obj.str.replace(cr, crlf)
+    obj.expect = obj.expect.replace(cr, crlf)
+    t.equal(fmt(obj.str), obj.expect, obj.msg)
+  })
+})
