@@ -74,8 +74,10 @@ function getFiles (done) {
 getFiles(function (err, files) {
   if (err) return error(err)
   files.forEach(function (file) {
-    file.data = fmt.transform(file.data)
-    processFile(file)
+    try {
+      file.data = fmt.transform(file.data)
+      processFile(file)
+    } catch (e) {error(file.name + ': ' + e)}
   })
 })
 
