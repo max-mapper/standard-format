@@ -73,7 +73,7 @@ var noops = [
     '  })\n' +
     '}\n',
 
-    msg: 'Dont mess with function tabbing'
+    msg: 'Don\'t mess with function tabbing'
 
   },
   {
@@ -113,7 +113,7 @@ var semicolons = [
       ';(function () {\n' +
       '  bar()\n' +
       '}())\n',
-    msg: 'Add semi before `[` and `(` if they are the first things on the line'
+    msg: 'Add semicolon before `[` and `(` if they are the first things on the line'
   }
 ]
 
