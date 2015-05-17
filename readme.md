@@ -35,3 +35,9 @@
 ### Editor plugins
 
   - Sublime Text: [sublime-standard-format](https://packagecontrol.io/packages/StandardFormat)
+
+### Science :mortar_board:
+
+  > A new step should be added to the modification cycle: modifying the program to make it readable.
+
+  [Elshoff & Marcotty, 1982](http://dl.acm.org/citation.cfm?id=358596)
