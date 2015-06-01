@@ -24,12 +24,22 @@ module.exports.transform = function (file) {
   file = file
     .replace(MULTI_NEWLINE, EOL + EOL)
 
+  var prefix = 'function fixReturns() {\n'
+  var postfix = '\n}'
+
+  file = prefix + file + postfix
+
   var formatted = formatter.format(file, ESFORMATTER_CONFIG)
     .replace(EOL_SEMICOLON, EOL)
     .replace(EOL_SEMICOLON_WITH_COMMENT, '')
-    .replace(SOF_NEWLINES, '')
+    .replace(SOF_NEWLINES, '').slice(prefix.length, -postfix.length)
+    .split('\n').map(removeIndent).join('\n')
 
   return formatted
+
+  function removeIndent(line) {
+    return line.slice(2)
+  }
 }
 
 module.exports.load = function (opts, cb) {
