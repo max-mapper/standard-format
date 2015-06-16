@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/maxogden/standard-format",
   "dependencies": {
-    "esformatter": "^0.6.0",
+    "esformatter": "^0.7.0",
     "esformatter-eol-last": "^1.0.0",
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
