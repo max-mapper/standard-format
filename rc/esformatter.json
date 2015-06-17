@@ -158,6 +158,11 @@
       "ElseIfStatementOpeningBrace" : 1,
       "ElseIfStatementClosingBrace" : -1,
       "MemberExpressionClosing" : -1,
+      "ObjectExpressionOpeningBrace": -1,
+      "ObjectExpressionClosingBrace": -1,
+      "ObjectPatternOpeningBrace": -1,
+      "ObjectPatternClosingBrace": -1,
+      "ObjectPatternComma": 1,
       "LineComment" : -1,
       "LogicalExpressionOperator" : 1,
       "Property" : -1,
@@ -176,8 +181,7 @@
       "WhileStatementConditionalOpening" : -1,
       "WhileStatementConditionalClosing" : -1,
       "WhileStatementOpeningBrace" : -1,
-      "WhileStatementClosingBrace" : -1,
-      "ObjectExpressionClosingBrace": -1
+      "WhileStatementClosingBrace" : -1
     },
 
     "after" : {
@@ -233,7 +237,11 @@
       "ElseIfStatementClosingBrace" : -1,
       "MemberExpressionOpening" : -1,
       "LogicalExpressionOperator" : 1,
+      "ObjectExpressionOpeningBrace": -1,
       "ObjectExpressionClosingBrace": -1,
+      "ObjectPatternOpeningBrace": -1,
+      "ObjectPatternClosingBrace": -1,
+      "ObjectPatternComma": 1,
       "PropertyName" : 0,
       "PropertyValue" : -1,
       "ParameterComma" : 1,
