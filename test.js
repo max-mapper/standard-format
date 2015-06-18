@@ -146,3 +146,8 @@ getRequests()
 void {
   testing :123
 }
+
+// Test start of line semicolins
+var gloopy = 12
+[1,2,3].map(function () {})
+console.log(gloopy)
