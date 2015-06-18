@@ -42,6 +42,17 @@ var collapse = [
     '  bar()\n' +
     '}\n',
     msg: 'Remove padding newlines after curly braces'
+  },
+  {
+    program:
+    'var x = 123; /* Useful comment \n' +
+    'that spans two lines */\n',
+
+    expected:
+    'var x = 123 /* Useful comment \n' +
+    'that spans two lines */\n',
+
+    msg: 'Remove semicolon from multiline comment'
   }
 ]
 
