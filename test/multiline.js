@@ -1,6 +1,9 @@
 var test = require('tape')
 var fmt = require('../').transform
 
+var cr = new RegExp(/\n/g)
+var crlf = '\r\n'
+
 var collapse = [
   {
     program:
@@ -59,6 +62,15 @@ var collapse = [
 test('multiline collapse', function (t) {
   t.plan(collapse.length)
   collapse.forEach(function (obj) {
+    t.equal(fmt(obj.program), obj.expected, obj.msg)
+  })
+})
+
+test('multiline collapse CRLF', function (t) {
+  t.plan(collapse.length)
+  collapse.forEach(function (obj) {
+    obj.program = obj.program.replace(cr, crlf)
+    obj.expected = obj.expected.replace(cr, crlf)
     t.equal(fmt(obj.program), obj.expected, obj.msg)
   })
 })
@@ -132,5 +144,13 @@ test('multiline semicolons', function (t) {
   t.plan(semicolons.length)
   semicolons.forEach(function (obj) {
     t.equal(fmt(obj.program), obj.expected, obj.msg)
+  })
+})
+
+test('multiline noop CRLF', function (t) {
+  t.plan(noops.length)
+  noops.forEach(function (obj) {
+    obj.program = obj.program.replace(cr, crlf)
+    t.equal(fmt(obj.program), obj.program, obj.msg)
   })
 })
