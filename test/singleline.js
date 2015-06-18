@@ -20,6 +20,9 @@ var noops = [
   },
   { str: 'window.wrapFunctionsUntil(1)\n',
     msg: 'Noop non-functions with function in the name'
+  },
+  { str: 'import * as lib from \'lib\'\n',
+    msg: 'Noop ES2015 import'
   }
 ]
 
