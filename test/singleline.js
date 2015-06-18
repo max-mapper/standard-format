@@ -99,12 +99,12 @@ var transforms = [
   {
     str: 'var x = 123; // Useful comment\n',
     expect: 'var x = 123 // Useful comment\n',
-    msg: 'Remove uneeded trailing semicolons that are followed by a comment'
+    msg: 'Remove unneeded trailing semicolons that are followed by a comment'
   },
   {
     str: 'var x = 123; /* Useful comment */\n',
     expect: 'var x = 123 /* Useful comment */\n',
-    msg: 'Remove uneeded trailing semicolons that are followed by a multiline comment'
+    msg: 'Remove unneeded trailing semicolons that are followed by a multiline comment'
   }
 ]
 
