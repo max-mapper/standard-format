@@ -23,6 +23,9 @@ var noops = [
   },
   { str: 'import * as lib from \'lib\'\n',
     msg: 'Noop ES2015 import'
+  },
+  { str: 'function* blarg (foo) {yield foo}\n',
+    msg: 'Noop ES2015 generator'
   }
 ]
 
