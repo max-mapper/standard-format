@@ -7,7 +7,8 @@ var argv = require('minimist')(process.argv.slice(2), {
   boolean: ['help', 'stdin', 'version', 'write'],
   alias: {
     h: 'help',
-    w: 'write'
+    w: 'write',
+    v: 'version'
   }
 })
 
@@ -32,7 +33,7 @@ if (argv.help) {
       node_modules/, .git/, *.min.js, bundle.js
 
   Flags:
-          --version   Show current version.
+      -v  --version   Show current version.
       -w  --write     Directly modify input files.
       -h, --help      Show usage information.
 
