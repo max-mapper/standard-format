@@ -58,7 +58,7 @@ module.exports.load = function (opts, cb) {
     return new Minimatch(pattern)
   })
 
-  glob('**/*.js', {
+  glob(['**/*.js', '**/*.jsx'], {
     cwd: opts.cwd || process.cwd()
   }, function (err, files) {
     if (err) return cb(err)
