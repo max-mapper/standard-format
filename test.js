@@ -142,6 +142,19 @@ function getRequests (cb) {
 }
 getRequests()
 
+// jsx
+var React = require('react')
+
+var testClass = React.createClass({
+  render: function () {
+    return (
+      <div className='testClass'></div>
+    )
+  }
+})
+
+module.exports = testClass
+
 // spacing around Property names (key-spacing)
 void {
   testing :123
