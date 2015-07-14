@@ -35,6 +35,7 @@
 ### Editor plugins
 
   - Sublime Text: [sublime-standard-format](https://packagecontrol.io/packages/StandardFormat)
+  - Atom: [atom-standard-formatter](https://atom.io/packages/standard-formatter)
 
 ### Science :mortar_board:
 
