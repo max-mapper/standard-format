@@ -20,15 +20,13 @@
   },
   "homepage": "https://github.com/maxogden/standard-format",
   "dependencies": {
+    "deglob": "^1.0.0",
     "esformatter": "^0.7.0",
     "esformatter-eol-last": "^1.0.0",
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
     "esformatter-semicolon-first": "^1.0.1",
     "esformatter-spaced-lined-comment": "^2.0.0",
-    "find-root": "^0.1.1",
-    "glob": "^5.0.5",
-    "minimatch": "^2.0.1",
     "minimist": "^1.1.0",
     "stdin": "0.0.1"
   },

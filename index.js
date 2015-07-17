@@ -1,8 +1,6 @@
 var path = require('path')
+var deglob = require('deglob')
 var fs = require('fs')
-var glob = require('glob')
-var findRoot = require('find-root')
-var Minimatch = require('minimatch').Minimatch
 var formatter = require('esformatter')
 
 var ESFORMATTER_CONFIG = require(path.join(__dirname, 'rc', 'esformatter.json'))
@@ -40,33 +38,21 @@ module.exports.load = function (opts, cb) {
   }
   if (!opts) opts = {}
 
-  var root
-  try {
-    root = findRoot(process.cwd())
-  } catch (e) {}
-
   var ignore = [].concat(DEFAULT_IGNORE) // globs to ignore
-
-  if (root) {
-    var packageOpts = require(path.join(root, 'package.json')).standard
-    if (packageOpts) ignore = ignore.concat(packageOpts.ignore)
-  }
-
   if (opts.ignore) ignore = ignore.concat(opts.ignore)
 
-  ignore = ignore.map(function (pattern) {
-    return new Minimatch(pattern)
-  })
+  var deglobOpts = {
+    ignore: ignore,
+    cwd: opts.cwd || process.cwd(),
+    useGitIgnore: true,
+    usePackageJson: true,
+    configKey: 'standard'
+  }
 
-  glob(['**/*.js', '**/*.jsx'], {
-    cwd: opts.cwd || process.cwd()
-  }, function (err, files) {
+  deglob(['**/*.js', '**/*.jsx'], deglobOpts, function (err, files) {
     if (err) return cb(err)
-    files = files.filter(function (file) {
-      return !ignore.some(function (mm) {
-        return mm.match(file)
-      })
-    }).map(function (f) {
+
+    files = files.map(function (f) {
       return { name: f, data: fs.readFileSync(f).toString() } // assume utf8
     })
     cb(null, files)
