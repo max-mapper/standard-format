@@ -12,7 +12,7 @@ var noops = [
     '  }\n' +
     '}\n',
 
-    msg: 'Add semicolon before `[` and `(` if they are the first things on the line'
+    msg: 'Keep indentation for multiple return statements'
   }
 ]
 
