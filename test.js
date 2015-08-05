@@ -164,3 +164,8 @@ void {
 var gloopy = 12
 [1,2,3].map(function () {})
 console.log(gloopy)
+
+// Test member accessors
+var array = [1,2,3]
+var val = array[0]
+var val2 = array[1]
