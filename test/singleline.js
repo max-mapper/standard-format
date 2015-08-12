@@ -26,6 +26,10 @@ var noops = [
   },
   { str: 'function* blarg (foo) {yield foo}\n',
     msg: 'Noop ES2015 generator'
+  },
+  {
+    str: 'console.log(1 === 2 ? 3 : 4)\n',
+    msg: 'Noop infix'
   }
 ]
 
@@ -111,6 +115,11 @@ var transforms = [
     str: 'var x = 123; /* Useful comment */\n',
     expect: 'var x = 123 /* Useful comment */\n',
     msg: 'Remove unneeded trailing semicolons that are followed by a multiline comment'
+  },
+  {
+    str: 'console.log(1===2?3:4)\n',
+    expect: 'console.log(1 === 2 ? 3 : 4)\n',
+    msg: 'infix'
   }
 ]
 
