@@ -26,7 +26,7 @@
     "esformatter-jsx": "^1.3.0",
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
-    "esformatter-semicolon-first": "^1.0.1",
+    "esformatter-semicolon-first": "^1.1.0",
     "esformatter-spaced-lined-comment": "^2.0.0",
     "minimist": "^1.1.0",
     "stdin": "0.0.1"
