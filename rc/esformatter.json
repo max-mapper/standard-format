@@ -166,7 +166,7 @@
       "ObjectExpressionClosingBrace": -1,
       "ObjectPatternOpeningBrace": -1,
       "ObjectPatternClosingBrace": -1,
-      "ObjectPatternComma": 1,
+      "ObjectPatternComma": 0,
       "LineComment" : 1,
       "LogicalExpressionOperator" : 1,
       "Property" : -1,
