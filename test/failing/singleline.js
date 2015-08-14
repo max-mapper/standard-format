@@ -7,12 +7,6 @@ var transforms = [
     expect: 'var x = {key: 123, more: 456}\n',
     msg: 'Space after comma in keys',
     issue: 'https://github.com/maxogden/standard-format/issues/54'
-  },
-  {
-    str: 'const { message, rollup, line, col, type } = origMessage\n',
-    expect: 'const { message, rollup, line, col, type } = origMessage\n',
-    msg: 'No space before comma in keys in destructuring assignment',
-    issue: 'https://github.com/maxogden/standard-format/pull/85'
   }
 ]
 
