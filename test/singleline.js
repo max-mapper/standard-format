@@ -120,6 +120,11 @@ var transforms = [
     str: 'console.log(1===2?3:4)\n',
     expect: 'console.log(1 === 2 ? 3 : 4)\n',
     msg: 'infix'
+  },
+  {
+    str: 'const { message, rollup, line, col, type } = origMessage\n',
+    expect: 'const { message, rollup, line, col, type } = origMessage\n',
+    msg: 'No space before comma in keys in destructuring assignment'
   }
 ]
 
