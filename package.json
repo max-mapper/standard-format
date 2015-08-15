@@ -1,6 +1,6 @@
 {
   "name": "standard-format",
-  "version": "1.6.2",
+  "version": "1.6.4",
   "description": "attempts to reformat javascript to comply with feross/standard style",
   "main": "index.js",
   "bin": "./bin.js",
@@ -21,12 +21,12 @@
   "homepage": "https://github.com/maxogden/standard-format",
   "dependencies": {
     "deglob": "^1.0.0",
-    "esformatter": "^0.7.0",
+    "esformatter": "^0.7.3",
     "esformatter-eol-last": "^1.0.0",
     "esformatter-jsx": "^1.3.0",
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
-    "esformatter-semicolon-first": "^1.0.1",
+    "esformatter-semicolon-first": "^1.1.0",
     "esformatter-spaced-lined-comment": "^2.0.0",
     "minimist": "^1.1.0",
     "stdin": "0.0.1"

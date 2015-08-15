@@ -22,11 +22,13 @@ module.exports.transform = function (file) {
   file = file
     .replace(MULTI_NEWLINE_N, '\n\n')
     .replace(MULTI_NEWLINE_RN, '\r\n\r\n')
-
-  var formatted = formatter.format(file, ESFORMATTER_CONFIG)
     .replace(EOL_SEMICOLON, '')
     .replace(EOL_SEMICOLON_WITH_COMMENT, '')
     .replace(SOF_NEWLINES, '')
+
+  var formatted = formatter.format(file, ESFORMATTER_CONFIG)
+    .replace(EOL_SEMICOLON, '')
+    // run replace again; esformatter-semicolon-first will re-add semicolon at EOL
 
   return formatted
 }

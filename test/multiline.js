@@ -108,6 +108,21 @@ var noops = [
     '}\n',
 
     msg: 'allow single line object arrays'
+  },
+  {
+    program:
+    '/*global localStorage*/\n' +
+    ';(function () { // IIFE to ensure no global leakage!\n' +
+    '}())\n',
+    msg: 'IIFEs are not messed with'
+  },
+  {
+    program:
+    "console.log('meh')\n" +
+    ';(function a () {\n' +
+    "  console.log('hiya')\n" +
+    '}())\n',
+    msg: 'IIFEs are not messed with'
   }
 ]
 
@@ -145,6 +160,19 @@ var semicolons = [
       '  bar()\n' +
       '}())\n',
     msg: 'Add semicolon before `[` and `(` if they are the first things on the line'
+  },
+  {
+    program:
+      "console.log('meh');\n" +
+      '(function a() {\n' +
+      "console.log('hiya');\n" +
+      '}());',
+    expected:
+      "console.log('meh')\n" +
+      ';(function a () {\n' +
+      "  console.log('hiya')\n" +
+      '}())\n',
+    msg: 'IIFEs are not messed with'
   }
 ]
 
