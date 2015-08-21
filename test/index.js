@@ -1,28 +1,28 @@
 var test = require('tape')
-var run = require('./standard-runner')
 var fs = require('fs')
 var join = require('path').join
 var fmt = require('../').transform
+var inspect = require('util').inspect
+var standard = require('standard')
+var TARGET_FILE = join(__dirname, '../test.js')
 
-test('test.js ran through formatter', function (t) {
-  var file = fs.readFileSync(join(__dirname, '../test.js')).toString()
-  var formatted = fmt(file)
-  var lines = formatted.split('\n')
+test('test.js formatted and linted without error', function (t) {
+  t.plan()
+  fs.readFile(TARGET_FILE, {encoding: 'utf8'}, function (err, data) {
+    var formatted
+    t.error(err, 'read test file without error')
 
-  run(formatted, function (err, reports) {
-    t.ok(!err, 'no runner errors js')
+    try {
+      formatted = fmt(data)
+    } catch(e) {
+      t.error(e, 'format test file without error')
+    }
 
-    reports.forEach(function (report) {
-      var highlight = run.highlight(lines, report)
-      t.fail(report.message)
-      var comment = '\n' +
-                    report.source + ':' +
-                    report.line + ':' +
-                    report.column + ':' +
-                    report.message + highlight
-      console.log(comment)
+    standard.lintText(formatted, function (err, result) {
+      t.equal(result.errorCount, 0, 'there should be no linting errors after formatting')
+      t.equal(result.warningCount, 0, 'there should be no linting warnings after formatting')
+      if (result.errorCount || result.warningCount !== 0) console.log(inspect(result, {depth: null}))
+      t.end()
     })
-
-    t.end()
   })
 })
