@@ -267,6 +267,7 @@
   },
 
   "jsx": {
+    "formatJSX": false,
     "attrsOnSameLineAsTag": false,
     "maxAttrsOnTag": 2
   },
