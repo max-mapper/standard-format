@@ -3,6 +3,7 @@
 // This file is automatically ran through standard-format
 // and checked by standard. Add test cases for the formatter by adding
 // to this file
+var noop = require('noop')
 
 // eol semicolons
 var x = 1;
@@ -169,3 +170,4 @@ console.log(gloopy)
 var array = [1,2,3]
 var val = array[0]
 var val2 = array[1]
+noop(val, val2)
