@@ -2,34 +2,56 @@ var test = require('tape')
 var fmt = require('../').transform
 
 var noops = [
-  { str: 'if (!opts) opts = {}\n',
-    msg: 'Noop on single line conditional assignment' },
+  {
+    str: 'if (!opts) opts = {}\n',
+    msg: 'Noop on single line conditional assignment'
+  },
 
-  { str: 'var g = { name: f, data: fs.readFileSync(f).toString() }\n',
+  {
+    str: 'var g = { name: f, data: fs.readFileSync(f).toString() }\n',
     msg: 'Noop on single line object assignment'
   },
   {
-    str: '{foo: \'bar\'}\n',
+    str: "{foo: 'bar'}\n",
     msg: 'Dont add padding to object braces'
   },
-  { str: "var x = ['test.js', '**test/failing/**']\n",
+  {
+    str: "var x = ['test.js', '**test/failing/**']\n",
     msg: 'Noop on singleline arrays'
   },
-  { str: 'function x () {}\n',
+  {
+    str: 'function x () {}\n',
     msg: 'Noop on named functions correctly spaced'
   },
-  { str: 'window.wrapFunctionsUntil(1)\n',
+  {
+    str: 'window.wrapFunctionsUntil(1)\n',
     msg: 'Noop non-functions with function in the name'
   },
-  { str: 'import * as lib from \'lib\'\n',
+  {
+    str: "import * as lib from 'lib'\n",
     msg: 'Noop ES2015 import'
   },
-  { str: 'function* blarg (foo) {yield foo}\n',
+  {
+    str: 'function* blarg (foo) {yield foo}\n',
     msg: 'Noop ES2015 generator'
   },
   {
     str: 'console.log(1 === 2 ? 3 : 4)\n',
     msg: 'Noop infix'
+  },
+  {
+    str: 'test[0]\ntest\n',
+    msg: 'allow newline after member accessor',
+    issues: ['https://github.com/maxogden/standard-format/pull/93']
+  },
+  {
+    str: 'test(test[0])\n',
+    msg: "don't force newline on mid-expression member accessor",
+    issues: ['https://github.com/maxogden/standard-format/pull/93']
+  },
+  {
+    str: '// good comment\n',
+    msg: 'Expect good comments to be unchanged'
   }
 ]
 
@@ -125,6 +147,11 @@ var transforms = [
     str: 'const { message, rollup, line, col, type } = origMessage\n',
     expect: 'const { message, rollup, line, col, type } = origMessage\n',
     msg: 'No space before comma in keys in destructuring assignment'
+  },
+  {
+    str: '//bad comment\n',
+    expect: '// bad comment\n',
+    msg: 'Expect space or tab after // in comment'
   }
 ]
 

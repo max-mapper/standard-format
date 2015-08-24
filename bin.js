@@ -78,7 +78,7 @@ getFiles(function (err, files) {
     try {
       file.data = fmt.transform(file.data)
       processFile(file)
-    } catch (e) {error(file.name + ': ' + e)}
+    } catch (e) {error(file.name + ': ' + e) }
   })
 })
 
