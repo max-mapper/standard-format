@@ -3,23 +3,28 @@ var fmt = require('../../').transform
 
 var noops = [
   {
-    program: 'var cool =\n' +
-      '  a +\n' +
-      '  b +\n' +
-      '  c\n',
-
-    msg: 'allow newlines after assignment operator'
+    program: [
+      'var cool =',
+      '  a +',
+      '  b +',
+      '  c',
+      ''
+    ].join('\n'),
+    msg: 'Allow indendation following a newline after assignment operator',
+    issues: ['https://github.com/maxogden/standard-format/issues/101']
   }
 ]
 
 test('multiline noop', function (t) {
   t.plan(noops.length)
   noops.forEach(function (obj) {
-    t.equal(fmt(obj.program), obj.program, obj.msg)
+    var fmtd = fmt(obj.program)
+    t.equal(fmtd, obj.program, obj.msg)
+    console.log('issues:\n' + obj.issues.join('\n'))
   })
 })
 
-var continuation_indent = [
+var transforms = [
   {
     program: [
       'function x()',
@@ -29,7 +34,8 @@ var continuation_indent = [
       '    i++',
       '  } while(i<10)',
       '  console.log(i);',
-      '}'].join('\n'),
+      '}'
+    ].join('\n'),
     expected: [
       'function x () {',
       '  var i = 0',
@@ -37,17 +43,21 @@ var continuation_indent = [
       '    i++',
       '  } while (i < 10)',
       '  console.log(i)',
-      '}', ''].join('\n'),
-    msg: 'do-while continuation_indent',
+      '}',
+      ''
+    ].join('\n'),
+    msg: 'Indendation following a do-while loop',
     issues: [
-      'https://github.com/maxogden/standard-format/pull/87'
+      'https://github.com/maxogden/standard-format/pull/87',
+      'https://github.com/maxogden/standard-format/issues/86'
     ]
   }
 ]
 
-test('Continuation Indent', function (t) {
-  t.plan(continuation_indent.length)
-  continuation_indent.forEach(function (obj) {
+test('Failing Multiline Transforms', function (t) {
+  t.plan(transforms.length)
+  transforms.forEach(function (obj) {
     t.equal(fmt(obj.program), obj.expected, obj.msg)
+    console.log('issues:\n' + obj.issues.join('\n'))
   })
 })
