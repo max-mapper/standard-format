@@ -3,7 +3,8 @@ var path = require('path')
 var testFile = require('../testFile')
 
 var files = [
-  {path: path.resolve(path.join(__dirname, '/obfuscated-files/standard-format-torture.js'))}
+  {path: path.resolve(path.join(__dirname, '/obfuscated-files/standard-format-torture.js')),
+  issues: ['https://github.com/maxogden/standard-format/issues/27']}
 ]
 
 files.forEach(function (fileObj) {
