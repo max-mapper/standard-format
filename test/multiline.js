@@ -6,54 +6,69 @@ var crlf = '\r\n'
 
 var collapse = [
   {
-    program:
-    'var x = 1\n' +
-    '\n' +
-    '\n' +
-    'var z = 2\n',
+    program: [
+      'var x = 1',
+      '',
+      '',
+      'var z = 2',
+      ''
+    ].join('\n'),
 
-    expected:
-    'var x = 1\n' +
-    '\n' +
-    'var z = 2\n',
+    expected: [
+      'var x = 1',
+      '',
+      'var z = 2',
+      ''
+    ].join('\n'),
 
     msg: 'two empty lines should collapse to one'
   },
   {
-    program:
-    'var x = 1\n' +
-    '\n' + '\n' + '\n' + '\n' + '\n' +
-    '\n' + '\n' + '\n' + '\n' + '\n' +
-    'var z = 2\n',
+    program: [
+      'var x = 1',
+      '', '', '', '', '',
+      '', '', '', '', '',
+      'var z = 2', ''
+    ].join('\n'),
 
-    expected:
-    'var x = 1\n' +
-    '\n' +
-    'var z = 2\n',
+    expected: [
+      'var x = 1',
+      '',
+      'var z = 2', ''
+    ].join('\n'),
 
     msg: 'ten empty lines should collapse to one'
   },
   {
-    program:
-    'var foo = function () {\n' +
-    '\n' +
-    '  bar()\n' +
-    '}\n',
+    program: [
+      'var foo = function () {',
+      '',
+      '  bar()',
+      '}',
+      ''
+    ].join('\n'),
 
-    expected:
-    'var foo = function () {\n' +
-    '  bar()\n' +
-    '}\n',
+    expected: [
+      'var foo = function () {',
+      '  bar()',
+      '}',
+      ''
+    ].join('\n'),
+
     msg: 'Remove padding newlines after curly braces'
   },
   {
-    program:
-    'var x = 123; /* Useful comment \n' +
-    'that spans two lines */\n',
+    program: [
+      'var x = 123; /* Useful comment ',
+      'that spans two lines */',
+      ''
+    ].join('\n'),
 
-    expected:
-    'var x = 123 /* Useful comment \n' +
-    'that spans two lines */\n',
+    expected: [
+      'var x = 123 /* Useful comment ',
+      'that spans two lines */',
+      ''
+    ].join('\n'),
 
     msg: 'Remove semicolon from multiline comment'
   }
@@ -77,51 +92,63 @@ test('multiline collapse CRLF', function (t) {
 
 var noops = [
   {
-    program:
-    'var x = 1\n' +
-    '\n' +
-    'var z = 2\n',
+    program: [
+      'var x = 1',
+      '',
+      'var z = 2',
+      ''
+    ].join('\n'),
 
     msg: 'single empty line should be unmodified'
   },
   {
-    program:
-    'function getRequests (cb) {\n' +
-    '  nets({\n' +
-    "    url: binUrl + '/api/v1/bins/' + bin.name + '/requests',\n" +
-    '    json: true,\n' +
-    '    headers: headers\n' +
-    '  }, function (err, resp, body) {\n' +
-    '    cb(err, resp, body)\n' +
-    '  })\n' +
-    '}\n',
+    program: [
+      'function getRequests (cb) {',
+      '  nets({',
+      "    url: binUrl + '/api/v1/bins/' + bin.name + '/requests',",
+      '    json: true,',
+      '    headers: headers',
+      '  }, function (err, resp, body) {',
+      '    cb(err, resp, body)',
+      '  })',
+      '}',
+      ''
+    ].join('\n'),
 
-    msg: 'Don\'t mess with function tabbing'
+    msg: "Don't mess with function tabbing"
 
   },
   {
-    program:
-    'var obj = {\n' +
-    "  'standard': {\n" +
-    "    'ignore': ['test.js', '**test/failing/**']\n" +
-    '  }\n' +
-    '}\n',
+    program: [
+      'var obj = {',
+      "  'standard': {",
+      "    'ignore': ['test.js', '**test/failing/**']",
+      '  }',
+      '}',
+      ''
+    ].join('\n'),
 
     msg: 'allow single line object arrays'
   },
   {
-    program:
-    '/*global localStorage*/\n' +
-    ';(function () { // IIFE to ensure no global leakage!\n' +
-    '}())\n',
+    program: [
+      '/*global localStorage*/',
+      ';(function () { // IIFE to ensure no global leakage!',
+      '}())',
+      ''
+    ].join('\n'),
+
     msg: 'IIFEs are not messed with'
   },
   {
-    program:
-    "console.log('meh')\n" +
-    ';(function a () {\n' +
-    "  console.log('hiya')\n" +
-    '}())\n',
+    program: [
+      "console.log('meh')",
+      ';(function a () {',
+      "  console.log('hiya')",
+      '}())',
+      ''
+    ].join('\n'),
+
     msg: 'IIFEs are not messed with'
   }
 ]
@@ -143,35 +170,47 @@ test('multiline noop CRLF', function (t) {
 
 var semicolons = [
   {
-    program:
-      'var x = 2\n' +
-      '[1, 2, 3].map(function () {})\n' +
-      '\n' +
-      'var y = 8\n' +
-      '(function () {\n' +
-      '  bar()\n' +
-      '}())\n',
-    expected:
-      'var x = 2\n' +
-      ';[1, 2, 3].map(function () {})\n' +
-      '\n' +
-      'var y = 8\n' +
-      ';(function () {\n' +
-      '  bar()\n' +
-      '}())\n',
+    program: [
+      'var x = 2',
+      '[1, 2, 3].map(function () {})',
+      '',
+      'var y = 8',
+      '(function () {',
+      '  bar()',
+      '}())',
+      ''
+    ].join('\n'),
+
+    expected: [
+      'var x = 2',
+      ';[1, 2, 3].map(function () {})',
+      '',
+      'var y = 8',
+      ';(function () {',
+      '  bar()',
+      '}())',
+      ''
+    ].join('\n'),
+
     msg: 'Add semicolon before `[` and `(` if they are the first things on the line'
   },
   {
-    program:
-      "console.log('meh');\n" +
-      '(function a() {\n' +
-      "console.log('hiya');\n" +
+    program: [
+      "console.log('meh');",
+      '(function a() {',
+      "console.log('hiya');",
       '}());',
-    expected:
-      "console.log('meh')\n" +
-      ';(function a () {\n' +
-      "  console.log('hiya')\n" +
-      '}())\n',
+      ''
+    ].join('\n'),
+
+    expected: [
+      "console.log('meh')",
+      ';(function a () {',
+      "  console.log('hiya')",
+      '}())',
+      ''
+    ].join('\n'),
+
     msg: 'IIFEs are not messed with'
   }
 ]

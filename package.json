@@ -45,7 +45,7 @@
   },
   "standard": {
     "ignore": [
-      "test.js",
+      "**test/test-files/**",
       "**test/failing/**"
     ]
   }
