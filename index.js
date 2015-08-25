@@ -1,9 +1,8 @@
-var path = require('path')
 var deglob = require('deglob')
 var fs = require('fs')
 var formatter = require('esformatter')
 
-var ESFORMATTER_CONFIG = require(path.join(__dirname, 'rc', 'esformatter.json'))
+var ESFORMATTER_CONFIG = require('./rc/esformatter.json')
 var DEFAULT_IGNORE = [
   'node_modules/**',
   '.git/**',
