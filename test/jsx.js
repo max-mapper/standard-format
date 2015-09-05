@@ -36,10 +36,7 @@ var noops = [
       '  render() {',
       '    return (',
       '    <div>',
-      '      <span',
-      '        foo={bar}',
-      '        bar={baz}',
-      '        beep={boop} />',
+      '      <span foo={bar} bar={baz} beep={boop} />',
       '    </div>',
       '    )',
       '  }',
@@ -47,6 +44,26 @@ var noops = [
       ''
     ].join('\n'),
     msg: 'Preserve indendation on JSX blocks with parameters',
+    issues: ['https://github.com/maxogden/standard-format/issues/99']
+  },
+  {
+    program: [
+      'export class Foo extends React.Component {',
+      '  render() {',
+      '    return (',
+      '    <div>',
+      '      <span',
+      '        foo={bar}',
+      '        bar={baz}',
+      '        maxArgs={four}',
+      '        beep={boop} />',
+      '    </div>',
+      '    )',
+      '  }',
+      '}',
+      ''
+    ].join('\n'),
+    msg: '4+ jsx args are multilined and aligned',
     issues: ['https://github.com/maxogden/standard-format/issues/99']
   }
 ]

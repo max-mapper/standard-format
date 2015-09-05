@@ -270,7 +270,7 @@
   "jsx": {
     "formatJSX": true,
     "attrsOnSameLineAsTag": false,
-    "maxAttrsOnTag": 2,
+    "maxAttrsOnTag": 3,
     "firstAttributeOnSameLine": false,
     "alignWithFirstAttribute": false,
     "spaceInJSXExpressionContainers": "",
