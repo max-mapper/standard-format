@@ -17,7 +17,7 @@ function testFile (filePath, depth) {
 
       try {
         formatted = fmt(data)
-      } catch(e) {
+      } catch (e) {
         t.error(e, 'format ' + basename + ' without error')
       }
 
