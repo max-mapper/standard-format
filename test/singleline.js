@@ -129,6 +129,21 @@ var transforms = [
     msg: 'Space after if'
   },
   {
+    str: 'if ( true ) {}\n',
+    expect: 'if (true) {}\n',
+    msg: 'Remove spaces inside conditional'
+  },
+  {
+    str: 'var condition = ( x === y )\n',
+    expect: 'var condition = (x === y)\n',
+    msg: 'Remove spaces inside expression parentheses'
+  },
+  {
+    str: 'function doStuff ( x, y ) {}\n',
+    expect: 'function doStuff (x, y) {}\n',
+    msg: 'Remove spaces inside parameter list parentheses'
+  },
+  {
     str: 'var x = 123; // Useful comment\n',
     expect: 'var x = 123 // Useful comment\n',
     msg: 'Remove unneeded trailing semicolons that are followed by a comment'
