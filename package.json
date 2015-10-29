@@ -21,7 +21,7 @@
   "homepage": "https://github.com/maxogden/standard-format",
   "dependencies": {
     "deglob": "^1.0.0",
-    "esformatter": "^0.7.3",
+    "esformatter": "^0.8.1",
     "esformatter-eol-last": "^1.0.0",
     "esformatter-jsx": "^2.0.11",
     "esformatter-literal-notation": "^1.0.0",
