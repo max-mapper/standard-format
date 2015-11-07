@@ -430,9 +430,19 @@
   },
 
   "jsx": {
-    "formatJSX": false,
+    "formatJSX": true,
     "attrsOnSameLineAsTag": false,
-    "maxAttrsOnTag": 2
+    "maxAttrsOnTag": 3,
+    "firstAttributeOnSameLine": false,
+    "alignWithFirstAttribute": false,
+    "spaceInJSXExpressionContainers": "",
+    "htmlOptions": {
+      "brace_style": "collapse",
+      "indent_char": " ",
+      "indent_size": 2,
+      "max_preserve_newlines": 2,
+      "preserve_newlines": true
+    }
   },
 
   "plugins": [
