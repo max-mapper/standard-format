@@ -23,7 +23,7 @@
     "deglob": "^1.0.0",
     "esformatter": "^0.8.1",
     "esformatter-eol-last": "^1.0.0",
-    "esformatter-jsx": "^2.0.11",
+    "esformatter-jsx": "^3.0.0",
     "esformatter-literal-notation": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
     "esformatter-semicolon-first": "^1.1.0",
