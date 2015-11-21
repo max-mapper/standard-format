@@ -70,7 +70,62 @@ foot()
 // test: no block padding
 var lessThanThreeNewlines = function () {
 
-  return 2;
+  var a = 1
+
+  switch (true) {
+
+    case 'one':
+
+      a = 2
+
+      break
+    case 'two':
+      try {
+
+        a = 2
+
+      } catch (ex) {
+
+        a = 3
+
+      }
+
+  }
+
+  while (a) {
+
+    a = false
+
+  }
+
+  for (a = 0; a < 1; a++) {
+
+    a++
+
+  }
+
+  if (a || a > 0) {
+
+    a = false
+
+  } else if (false) {
+
+    a = null
+
+  } else {
+
+    a = true
+
+  }
+
+  a = {
+
+    'test': 'awesome'
+
+  }
+
+  return a;
+
 }
 lessThanThreeNewlines()
 
