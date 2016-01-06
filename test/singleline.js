@@ -32,7 +32,7 @@ var noops = [
     msg: 'Noop ES2015 import'
   },
   {
-    str: 'function* blarg (foo) {yield foo}\n',
+    str: 'function * blarg (foo) {yield foo}\n',
     msg: 'Noop ES2015 generator'
   },
   {
