@@ -5,7 +5,7 @@ var noops = [
   {
     program: [
       'export default class Foo extends Component {',
-      '  renderPartial() {',
+      '  renderPartial () {',
       '    return this.props.bar.map((item) => {',
       '      return <Bar key={item.foo} data={item} />',
       '    })',
@@ -19,7 +19,7 @@ var noops = [
   {
     program: [
       'export class Foo extends React.Component {',
-      '  render() {',
+      '  render () {',
       '    return (',
       '    <div></div>',
       '    )',
@@ -33,7 +33,7 @@ var noops = [
   {
     program: [
       'export class Foo extends React.Component {',
-      '  render() {',
+      '  render () {',
       '    return (',
       '    <div>',
       '      <span foo={bar} bar={baz} beep={boop} />',
@@ -49,7 +49,7 @@ var noops = [
   {
     program: [
       'export class Foo extends React.Component {',
-      '  render() {',
+      '  render () {',
       '    return (',
       '    <div>',
       '      <span',
