@@ -1,5 +1,5 @@
 var test = require('tape')
-var fmt = require('../../').transform
+var fmt = require('../').transform
 
 var classes = [
   {

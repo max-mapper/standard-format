@@ -376,7 +376,6 @@
       "ForInStatementExpressionClosing" : -1,
       "ForInStatementOpeningBrace" : -1,
       "ForInStatementClosingBrace" : -1,
-
       "ForStatement" : -1,
       "ForStatementExpressionOpening" : -1,
       "ForStatementExpressionClosing" : -1,
@@ -402,6 +401,7 @@
       "MemberExpressionOpening" : -1,
       "MemberExpressionClosing": 0,
       "MemberExpressionPeriod": 0,
+      "MethodDefinitionName" : 1,
       "LogicalExpressionOperator" : 1,
       "ObjectExpressionOpeningBrace": -1,
       "ObjectExpressionClosingBrace": -1,
