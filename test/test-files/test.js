@@ -87,6 +87,7 @@ function noExtraSingle() { return 2 }
 noExtraSingle()
 
 // at most one newline after opening brace
+// at most one newline before closing brace
 function noExtraBraces() {
 
 
@@ -95,6 +96,7 @@ function noExtraBraces() {
   {
 
     return 42
+
   }
 
   else 
@@ -102,6 +104,7 @@ function noExtraBraces() {
   {
 
     return 42
+
   }
 
   switch(noExtraBraces) 
@@ -110,6 +113,7 @@ function noExtraBraces() {
 
   case null:
     return 42
+
   }
 
   try 
@@ -117,6 +121,7 @@ function noExtraBraces() {
   {
 
     return 42
+
   }
   catch (e) 
   
@@ -126,7 +131,9 @@ function noExtraBraces() {
   for (var i in noExtraBraces) {
 
     return i
+
   }
+
 }
 noExtraBraces()
 
