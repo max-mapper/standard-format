@@ -448,6 +448,7 @@
   "plugins": [
     "esformatter-quotes",
     "esformatter-literal-notation",
+    "esformatter-remove-trailing-commas",
     "esformatter-semicolon-first",
     "esformatter-spaced-lined-comment",
     "esformatter-jsx"
