@@ -95,7 +95,7 @@ function noExtraBraces() {
 
   {
 
-    return 42
+    console.log(42)
 
   }
 
@@ -103,7 +103,7 @@ function noExtraBraces() {
 
   {
 
-    return 42
+    console.log(42)
 
   }
 
@@ -112,7 +112,7 @@ function noExtraBraces() {
   {
 
   case null:
-    return 42
+    console.log(42)
 
   }
 
@@ -120,7 +120,7 @@ function noExtraBraces() {
 
   {
 
-    return 42
+    console.log(42)
 
   }
   catch (e) 
