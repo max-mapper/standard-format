@@ -33,8 +33,9 @@ if (argv.help) {
       node_modules/, .git/, *.min.js, bundle.js
 
   Flags:
-      -v  --version   Show current version.
-      -w  --write     Directly modify input files.
+          --stdin     Read file text from stdin.
+      -w, --write     Directly modify input files.
+      -v, --version   Show current version.
       -h, --help      Show usage information.
 
   Readme:  https://github.com/maxogden/standard-format
