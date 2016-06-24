@@ -1,6 +1,5 @@
 {
   "indent" : {
-    "ReturnStatement": ">=1",
     "value": "  ",
     "alignComments": true,
     "ArrayExpression": 1,
