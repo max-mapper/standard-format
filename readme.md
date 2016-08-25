@@ -8,6 +8,24 @@
 
   [![NPM](https://nodei.co/npm/standard-format.png)](https://nodei.co/npm/standard-format/)
 
+## Important Note
+
+`standard` v8.0.0 contains a new `--fix` command line flag to automatically fix
+problems. If you need ES2015+ support, consider using `standard --fix` instead
+of `standard-format` (this package) which may mangle your ES2015+ code.
+
+`standard --fix` is built into `standard` v8.0.0 for maximum convenience, it
+supports ES2015, and it's lightweight (no additional dependencies since it's part
+of ESLint which powers `standard`). Lots of problems are already fixable, and more
+are getting added with each ESLint release.
+
+`standard` also outputs a message ("Run `standard --fix` to automatically fix
+some problems.") when it detects problems that can be fixed automatically so you
+can save time!
+
+`standard-format` is currently more thorough than `standard --fix` so if you have
+an ES5-only codebase, you can keep happily using it.
+
 ## Installation
 
   Install with npm
