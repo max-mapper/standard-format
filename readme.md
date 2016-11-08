@@ -53,6 +53,7 @@ an ES5-only codebase, you can keep happily using it.
 ### Development tasks for task runners
 
 - Gulp [gulp-standard-format](https://github.com/Andruj/gulp-standard-format/)
+- Grunt [grunt-standard](https://github.com/pdehaan/grunt-standard)
 
 ### Editor plugins
 
