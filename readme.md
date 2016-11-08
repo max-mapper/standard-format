@@ -52,6 +52,8 @@ an ES5-only codebase, you can keep happily using it.
 
 ### Development tasks for task runners
 
+- Gulp [gulp-standard-format](https://github.com/Andruj/gulp-standard-format/)
+
 ### Editor plugins
 
   - Sublime Text: [sublime-standard-format](https://packagecontrol.io/packages/StandardFormat)
