@@ -50,6 +50,13 @@ an ES5-only codebase, you can keep happily using it.
 
     $ standard-format -w file1.js file2.js
 
+### Development tasks for task runners
+
+- Gulp
+    - [gulp-standard-format](https://github.com/Andruj/gulp-standard-format/)
+    - [gulp-standard-bundle](https://github.com/ggarciao/gulp-standard-bundle)
+- Grunt [grunt-standard](https://github.com/pdehaan/grunt-standard)
+
 ### Editor plugins
 
   - Sublime Text: [sublime-standard-format](https://packagecontrol.io/packages/StandardFormat)
