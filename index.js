@@ -14,7 +14,7 @@ var MULTI_NEWLINE_N = /((?:\n){3,})/g
 var MULTI_NEWLINE_RN = /((?:\r\n){3,})/g
 
 var EOL_SEMICOLON = /;(?=\r?\n)/g
-var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[\/\*][\s\w\*\/]*\r?\n)/g
+var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[/*][\s\w*/]*\r?\n)/g
 var SOF_NEWLINES = /^(\r?\n)+/g
 
 module.exports.transform = function (file) {
