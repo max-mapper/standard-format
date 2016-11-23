@@ -1,4 +1,3 @@
-
 # standard-format
 
   [![Build Status](https://travis-ci.org/maxogden/standard-format.svg)](https://travis-ci.org/maxogden/standard-format)
@@ -6,9 +5,11 @@
 
   **experimental** auto formatter for the easier cases in [standard](https://www.npmjs.com/package/standard)
 
-  [![NPM](https://nodei.co/npm/standard-format.png)](https://nodei.co/npm/standard-format/)
+# DEPRECATED
 
-## Important Note
+### Use `standard --fix` instead of `standard-format`.
+
+This package is no longer maintained.
 
 `standard` v8.0.0 contains a new `--fix` command line flag to automatically fix
 problems. If you need ES2015+ support, consider using `standard --fix` instead
@@ -22,9 +23,6 @@ are getting added with each ESLint release.
 `standard` also outputs a message ("Run `standard --fix` to automatically fix
 some problems.") when it detects problems that can be fixed automatically so you
 can save time!
-
-`standard-format` is currently more thorough than `standard --fix` so if you have
-an ES5-only codebase, you can keep happily using it.
 
 ## Installation
 
