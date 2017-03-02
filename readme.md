@@ -53,7 +53,7 @@ can save time!
 - Gulp
     - [gulp-standard-format](https://github.com/Andruj/gulp-standard-format/)
     - [gulp-standard-bundle](https://github.com/ggarciao/gulp-standard-bundle)
-- Grunt [grunt-standard](https://github.com/pdehaan/grunt-standard)
+- Grunt [grunt-standard](https://github.com/EasyAsABC123/grunt-standard)
 
 ### Editor plugins
 
