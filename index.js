@@ -17,7 +17,10 @@ var EOL_SEMICOLON = /;(?=\r?\n)/g
 var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[/*][\s\w*/]*\r?\n)/g
 var SOF_NEWLINES = /^(\r?\n)+/g
 
-module.exports.transform = function (file) {
+module.exports.transform = function (data) {
+  var file = data.fileContent
+  var name = data.name
+
   file = file
     .replace(MULTI_NEWLINE_N, '\n\n')
     .replace(MULTI_NEWLINE_RN, '\r\n\r\n')
@@ -25,10 +28,17 @@ module.exports.transform = function (file) {
     .replace(EOL_SEMICOLON_WITH_COMMENT, '')
     .replace(SOF_NEWLINES, '')
 
-  var formatted = formatter.format(file, ESFORMATTER_CONFIG)
-    .replace(EOL_SEMICOLON, '')
-    // run replace again; esformatter-semicolon-first will re-add semicolon at EOL
+  var formatted = file
 
+  try {
+    formatted = formatter.format(file, ESFORMATTER_CONFIG)
+      .replace(EOL_SEMICOLON, '')
+      // run replace again; esformatter-semicolon-first will re-add semicolon at EOL
+  } catch (e) {
+    console.log('File: ' + name)
+    console.log(e)
+  }
+  
   return formatted
 }
 
@@ -54,7 +64,12 @@ module.exports.load = function (opts, cb) {
     if (err) return cb(err)
 
     files = files.map(function (f) {
-      return { name: f, data: fs.readFileSync(f).toString() } // assume utf8
+      return { name: f,
+        data: {
+          fileContent: fs.readFileSync(f).toString(),
+          name: f
+        }
+      } // assume utf8
     })
     cb(null, files)
   })
