@@ -10,7 +10,7 @@ function testFile (filePath, depth) {
   // Inspect depth is optional
   var basename = path.basename(filePath)
   function test (t) {
-    fs.readFile(filePath, {encoding: 'utf8'}, function (err, data) {
+    fs.readFile(filePath, { encoding: 'utf8' }, function (err, data) {
       t.error(err, 'read ' + basename + ' file without error ')
 
       var formatted
@@ -27,7 +27,7 @@ function testFile (filePath, depth) {
         t.equal(result.warningCount, 0, basename + ' warning free after formatting')
         if (result.errorCount || result.warningCount !== 0) {
           // If there is an issue, print the details
-          console.log(inspect(result, {depth: depth || null}))
+          console.log(inspect(result, { depth: depth || null }))
         }
         t.end()
       })
