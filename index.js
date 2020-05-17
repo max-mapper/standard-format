@@ -43,7 +43,7 @@ module.exports.load = function (opts, cb) {
   if (opts.ignore) ignore = ignore.concat(opts.ignore)
 
   var deglobOpts = {
-    ignore: ignore,
+    ignore,
     cwd: opts.cwd || process.cwd(),
     useGitIgnore: true,
     usePackageJson: true,
