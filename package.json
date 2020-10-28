@@ -45,8 +45,8 @@
   },
   "standard": {
     "ignore": [
-      "**test/test-files/**",
-      "**test/failing/**"
+      "*test/test-files/**",
+      "*test/failing/**"
     ]
   }
 }
