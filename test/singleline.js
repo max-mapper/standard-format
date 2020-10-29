@@ -1,7 +1,7 @@
-var test = require('tape')
-var fmt = require('../').transform
+const test = require('tape')
+const fmt = require('../').transform
 
-var noops = [
+const noops = [
   {
     str: 'if (!opts) opts = {}\n',
     msg: 'Noop on single line conditional assignment'
@@ -62,7 +62,7 @@ test('singleline noop expressions', function (t) {
   })
 })
 
-var transforms = [
+const transforms = [
   {
     str: 'var x = function() {}\n',
     expect: 'var x = function () {}\n',
@@ -177,8 +177,8 @@ test('singleline transforms', function (t) {
   })
 })
 
-var cr = /\n/g
-var crlf = '\r\n'
+const cr = /\n/g
+const crlf = '\r\n'
 
 test('singleline transforms CRLF', function (t) {
   t.plan(transforms.length)

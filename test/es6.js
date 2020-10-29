@@ -1,7 +1,7 @@
-var test = require('tape')
-var fmt = require('../').transform
+const test = require('tape')
+const fmt = require('../').transform
 
-var classes = [
+const classes = [
   {
     program: [
       'export class com extends Component {',

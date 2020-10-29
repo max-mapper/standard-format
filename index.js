@@ -1,21 +1,21 @@
-var deglob = require('deglob')
-var fs = require('fs')
-var formatter = require('esformatter')
+const deglob = require('deglob')
+const fs = require('fs')
+const formatter = require('esformatter')
 
-var ESFORMATTER_CONFIG = require('./rc/esformatter.json')
-var DEFAULT_IGNORE = [
+const ESFORMATTER_CONFIG = require('./rc/esformatter.json')
+const DEFAULT_IGNORE = [
   'node_modules/**',
   '.git/**',
   '**/*.min.js',
   '**/bundle.js'
 ]
 
-var MULTI_NEWLINE_N = /((?:\n){3,})/g
-var MULTI_NEWLINE_RN = /((?:\r\n){3,})/g
+const MULTI_NEWLINE_N = /((?:\n){3,})/g
+const MULTI_NEWLINE_RN = /((?:\r\n){3,})/g
 
-var EOL_SEMICOLON = /;(?=\r?\n)/g
-var EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[/*][\s\w*/]*\r?\n)/g
-var SOF_NEWLINES = /^(\r?\n)+/g
+const EOL_SEMICOLON = /;(?=\r?\n)/g
+const EOL_SEMICOLON_WITH_COMMENT = /;(?=\s*\/[/*][\s\w*/]*\r?\n)/g
+const SOF_NEWLINES = /^(\r?\n)+/g
 
 module.exports.transform = function (file) {
   file = file
@@ -25,7 +25,7 @@ module.exports.transform = function (file) {
     .replace(EOL_SEMICOLON_WITH_COMMENT, '')
     .replace(SOF_NEWLINES, '')
 
-  var formatted = formatter.format(file, ESFORMATTER_CONFIG)
+  const formatted = formatter.format(file, ESFORMATTER_CONFIG)
     .replace(EOL_SEMICOLON, '')
     // run replace again; esformatter-semicolon-first will re-add semicolon at EOL
 
@@ -39,10 +39,10 @@ module.exports.load = function (opts, cb) {
   }
   if (!opts) opts = {}
 
-  var ignore = [].concat(DEFAULT_IGNORE) // globs to ignore
+  let ignore = [].concat(DEFAULT_IGNORE) // globs to ignore
   if (opts.ignore) ignore = ignore.concat(opts.ignore)
 
-  var deglobOpts = {
+  const deglobOpts = {
     ignore,
     cwd: opts.cwd || process.cwd(),
     useGitIgnore: true,

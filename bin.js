@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var fmt = require('./')
-var fs = require('fs')
-var stdin = require('stdin')
-var argv = require('minimist')(process.argv.slice(2), {
+const fmt = require('./')
+const fs = require('fs')
+const stdin = require('stdin')
+const argv = require('minimist')(process.argv.slice(2), {
   boolean: ['help', 'stdin', 'version', 'write'],
   alias: {
     h: 'help',
@@ -59,7 +59,7 @@ function processFile (transformed) {
 }
 
 function getFiles (done) {
-  var args = argv._
+  const args = argv._
   if (argv.stdin) {
     return stdin(function (file) {
       return done(null, [{ name: 'stdin', data: file }])

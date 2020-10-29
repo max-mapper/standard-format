@@ -1,7 +1,7 @@
-var test = require('tape')
-var fmt = require('../').transform
+const test = require('tape')
+const fmt = require('../').transform
 
-var noops = [
+const noops = [
   {
     program: [
       'export default class Foo extends Component {',

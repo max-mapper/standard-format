@@ -1,19 +1,19 @@
-var path = require('path')
-var fs = require('fs')
-var fmt = require('../').transform
-var standard = require('standard')
-var inspect = require('util').inspect
+const path = require('path')
+const fs = require('fs')
+const fmt = require('../').transform
+const standard = require('standard')
+const inspect = require('util').inspect
 
 function testFile (filePath, depth) {
   // Reads a file, formats its contents then lints it with standard
   // Test fails if there are linting errors or warnings
   // Inspect depth is optional
-  var basename = path.basename(filePath)
+  const basename = path.basename(filePath)
   function test (t) {
     fs.readFile(filePath, { encoding: 'utf8' }, function (err, data) {
       t.error(err, 'read ' + basename + ' file without error ')
 
-      var formatted
+      let formatted
 
       try {
         formatted = fmt(data)

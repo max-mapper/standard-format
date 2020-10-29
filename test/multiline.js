@@ -1,10 +1,10 @@
-var test = require('tape')
-var fmt = require('../').transform
+const test = require('tape')
+const fmt = require('../').transform
 
-var cr = /\n/g
-var crlf = '\r\n'
+const cr = /\n/g
+const crlf = '\r\n'
 
-var collapse = [
+const collapse = [
   {
     program: [
       'var x = 1',
@@ -90,7 +90,7 @@ test('multiline collapse CRLF', function (t) {
   })
 })
 
-var noops = [
+const noops = [
   {
     program: [
       'var x = 1',
@@ -168,7 +168,7 @@ test('multiline noop CRLF', function (t) {
   })
 })
 
-var semicolons = [
+const semicolons = [
   {
     program: [
       'var x = 2',
