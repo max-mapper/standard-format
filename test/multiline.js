@@ -1,7 +1,7 @@
 var test = require('tape')
 var fmt = require('../').transform
 
-var cr = new RegExp(/\n/g)
+var cr = /\n/g
 var crlf = '\r\n'
 
 var collapse = [
