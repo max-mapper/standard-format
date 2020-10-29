@@ -177,7 +177,7 @@ test('singleline transforms', function (t) {
   })
 })
 
-var cr = new RegExp(/\n/g)
+var cr = /\n/g
 var crlf = '\r\n'
 
 test('singleline transforms CRLF', function (t) {
